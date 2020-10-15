@@ -90,7 +90,7 @@
                                 </div>
                                 <div>
                                     <label class="text-sm text-gray-600">Password</label>
-                                    <x-input placeholder="Enter password" type="password" ></x-input>
+                                    <x-input placeholder="Enter password" type="password"></x-input>
                                 </div>
                             </div>
 
