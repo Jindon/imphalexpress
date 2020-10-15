@@ -13,12 +13,15 @@
 
         <!-- Styles -->
         <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css">
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
         <!-- Scripts -->
         <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.6.0/dist/alpine.js" defer></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
         @livewireStyles
     </head>
     <body class="bg-gray-100 font-sans antialiased">
@@ -37,8 +40,21 @@
             </div>
         </div>
 
-        @stack('modals')
-
         @livewireScripts
+
+        <script>
+            Livewire.on('alert', event => {
+                // alert('Settings saved successfully');
+                Toastify({
+                    text: "This is a toast",
+                    duration: 3000,
+                    position: 'center',
+                    className: "bg-green-600 text-green-100",
+                }).showToast();
+            })
+        </script>
+
+        @stack('modals')
+        @stack('scripts')
     </body>
 </html>
