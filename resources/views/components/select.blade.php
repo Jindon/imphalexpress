@@ -14,7 +14,7 @@
             name="{{$inputName}}"
             {{ $attributes->only('wire:model') }}
             value="{{$initialValue}}"
-            class="w-full border border-gray-300 bg-gray-100 rounded p-2 appearance-none focus:outline-none focus:bg-white focus:border-gray-400"
+            class="w-full border border-gray-300 bg-gray-100 leading-tight rounded p-3 appearance-none focus:outline-none focus:bg-white focus:border-gray-400 capitalize"
         >
             {{ $slot }}
         </select>

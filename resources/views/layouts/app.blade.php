@@ -38,21 +38,11 @@
             <div class="py-12">
                 <p class="text-center text-gray-400 text-sm">Copyright {{now()->year}} © {{ config('app.name', 'Imphal Express') }}</p>
             </div>
+
+            <x-notification />
         </div>
 
         @livewireScripts
-
-        <script>
-            Livewire.on('alert', event => {
-                // alert('Settings saved successfully');
-                Toastify({
-                    text: "This is a toast",
-                    duration: 3000,
-                    position: 'center',
-                    className: "bg-green-600 text-green-100",
-                }).showToast();
-            })
-        </script>
 
         @stack('modals')
         @stack('scripts')

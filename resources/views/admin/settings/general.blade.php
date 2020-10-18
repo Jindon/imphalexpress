@@ -6,83 +6,8 @@
                 <livewire:general-settings />
             </div>
             <div class="flex flex-col space-y-4 py-4 border-t border-gray-300">
-                <p>Status</p>
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-2">
-                    <div>
-                        <x-status-badge color="gray">
-                            <div class="w-full flex items-center justify-between">
-                                <span>Processing</span>
-                                <x-button
-                                    icon="close"
-                                    icon-width="3"
-                                    class="text-red-400 border-none bg-red-100 transition duration-200 hover:bg-red-400 hover:text-red-100"
-                                ></x-button>
-                            </div>
-                        </x-status-badge>
-                    </div>
-                    <div>
-                        <x-status-badge color="blue">
-                            <div class="w-full flex items-center justify-between">
-                                <span>Dispatched</span>
-                                <x-button
-                                    icon="close"
-                                    icon-width="3"
-                                    class="text-red-400 border-none bg-red-100 transition duration-200 hover:bg-red-400 hover:text-red-100"
-                                ></x-button>
-                            </div>
-                        </x-status-badge>
-                    </div>
-                    <div>
-                        <x-status-badge color="green">
-                            <div class="w-full flex items-center justify-between">
-                                <span>Delivered</span>
-                                <x-button
-                                    icon="close"
-                                    icon-width="3"
-                                    class="text-red-400 border-none bg-red-100 transition duration-200 hover:bg-red-400 hover:text-red-100"
-                                ></x-button>
-                            </div>
-                        </x-status-badge>
-                    </div>
-                    <div>
-                        <x-status-badge color="red">
-                            <div class="w-full flex items-center justify-between">
-                                <span>Delayed</span>
-                                <x-button
-                                    icon="close"
-                                    icon-width="3"
-                                    class="text-red-400 border-none bg-red-100 transition duration-200 hover:bg-red-400 hover:text-red-100"
-                                ></x-button>
-                            </div>
-                        </x-status-badge>
-                    </div>
-                    <div class="p-2 rounded border-dashed border-2 border-gray-300 text-gray-500 transition duration-200 hover:bg-gray-100 hover:text-orange-600 hover:border-orange-600 cursor-pointer">
-                        <div>
-                            <span>+ Add status</span>
-                        </div>
-                    </div>
-                </div>
+                <livewire:location-settings />
             </div>
-            <div class="flex flex-col space-y-4 py-4 border-t border-gray-300">
-            <p>Locations</p>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-2">
-                <div class="p-2 rounded border-2 border-gray-300 text-gray-600">
-                        <div class="w-full flex items-center justify-between">
-                            <span>Imphal west</span>
-                            <x-button
-                                icon="close"
-                                icon-width="3"
-                                class="text-red-400 border-none bg-red-100 transition duration-200 hover:bg-red-400 hover:text-red-100"
-                            ></x-button>
-                        </div>
-                </div>
-                <div class="p-2 rounded border-dashed border-2 border-gray-300 text-gray-500 transition duration-200 hover:bg-gray-100 hover:text-orange-600 hover:border-orange-600 cursor-pointer">
-                    <div>
-                        <span>+ Add location</span>
-                    </div>
-                </div>
-            </div>
-        </div>
         </div>
     </x-settings-layout>
 </x-app-layout>

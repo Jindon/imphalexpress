@@ -34,11 +34,11 @@ class PageTest extends TestCase
     }
 
     /** @test */
-    public function admin_can_see_admin_packages_page()
+    public function admin_can_see_packages_page()
     {
-        $admin = User::factory()->create(['role' => 'admin']);
-
-        $response = $this->actingAs($admin)->get(route('admin.packages'));
+        $this->withoutExceptionHandling();
+        $response = $this->actingAs(User::factory()->create(['role' => 'admin']))
+            ->get(route('admin.packages'));
         $response->assertStatus(200);
     }
 
@@ -52,16 +52,16 @@ class PageTest extends TestCase
     /** @test */
     public function admin_cannot_see_admin_general_settings_page()
     {
-        $admin = User::factory()->create(['role' => 'admin']);
-        $response = $this->actingAs($admin)->get(route('admin.settings.general'));
+        $response = $this->actingAs(User::factory()->create(['role' => 'admin']))
+            ->get(route('admin.settings.general'));
         $response->assertStatus(302);
     }
 
     /** @test */
     public function superadmin_can_see_admin_general_settings_page()
     {
-        $superadmin = User::factory()->create(['role' => 'superadmin']);
-        $response = $this->actingAs($superadmin)->get(route('admin.settings.general'));
+        $response = $this->actingAs(User::factory()->create(['role' => 'superadmin']))
+            ->get(route('admin.settings.general'));
         $response->assertStatus(200);
     }
 

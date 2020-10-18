@@ -26,7 +26,7 @@
                     </div>
 
                     <div>
-                        <x-dropdown-button trigger="Bulk option" width="48">
+                        <x-button.dropdown trigger="Bulk option" width="48">
                             <div>
                                 <p class="px-2 pt-3 uppercase text-xs text-gray-600">Change status to</p>
                                 <ul>
@@ -39,53 +39,53 @@
                                     <li class="px-2 py-1 pointer cursor-pointer text-sm hover:bg-gray-100">Download</li>
                                 </ul>
                             </div>
-                        </x-dropdown-button>
+                        </x-button.dropdown>
                     </div>
 
                     <div>
-                        <x-modal header="Add package" width="2/5">
-                            <x-slot name="trigger">
-                                <x-button
-                                    icon="add"
-                                    class="border border-gray-300 border-orange-600 text-orange-600 hover:bg-orange-700 hover:text-orange-100 rounded p-3"
-                                ></x-button>
-                            </x-slot>
-                            <!-- Body -->
-                            <div class="grid grids-cols-1 md:grid-cols-2 gap-2">
-                                <div>
-                                    <label class="text-sm text-gray-600">Business Name</label>
-                                    <x-input
-                                        placeholder="Enter business name"
-                                    ></x-input>
-                                </div>
-                                <div>
-                                    <label class="text-sm text-gray-600">Business Location</label>
-                                    <x-select input-name="delivery_location">
-                                        <option class="px-2 py-1 pointer cursor-pointer text-sm hover:bg-gray-100" value="">Select business location</option>
-                                        <option class="px-2 py-1 pointer cursor-pointer text-sm hover:bg-gray-100" value="imphal-west">Imphal West</option>
-                                        <option class="px-2 py-1 pointer cursor-pointer text-sm hover:bg-gray-100" value="imphal-east">Imphal East</option>
-                                    </x-select>
-                                </div>
-                                <div>
-                                    <label class="text-sm text-gray-600">Business Phone</label>
-                                    <x-input
-                                        icon="phone"
-                                        placeholder="Enter business phone"
-                                    ></x-input>
-                                </div>
-                                <div>
-                                    <label class="text-sm text-gray-600">Status</label>
-                                    <x-select input-name="status">
-                                        <option class="px-2 py-1 pointer cursor-pointer text-sm hover:bg-gray-100" value="active">Active</option>
-                                        <option class="px-2 py-1 pointer cursor-pointer text-sm hover:bg-gray-100" value="disabled">Disabled</option>
-                                    </x-select>
-                                </div>
-                            </div>
+{{--                        <x-modal header="Add package" width="2/5">--}}
+{{--                            <x-slot name="trigger">--}}
+{{--                                <x-button--}}
+{{--                                    icon="add"--}}
+{{--                                    class="border border-gray-300 border-orange-600 text-orange-600 hover:bg-orange-700 hover:text-orange-100 rounded p-3"--}}
+{{--                                ></x-button>--}}
+{{--                            </x-slot>--}}
+{{--                            <!-- Body -->--}}
+{{--                            <div class="grid grids-cols-1 md:grid-cols-2 gap-2">--}}
+{{--                                <div>--}}
+{{--                                    <label class="text-sm text-gray-600">Business Name</label>--}}
+{{--                                    <x-input--}}
+{{--                                        placeholder="Enter business name"--}}
+{{--                                    ></x-input>--}}
+{{--                                </div>--}}
+{{--                                <div>--}}
+{{--                                    <label class="text-sm text-gray-600">Business Location</label>--}}
+{{--                                    <x-select input-name="delivery_location">--}}
+{{--                                        <option class="px-2 py-1 pointer cursor-pointer text-sm hover:bg-gray-100" value="">Select business location</option>--}}
+{{--                                        <option class="px-2 py-1 pointer cursor-pointer text-sm hover:bg-gray-100" value="imphal-west">Imphal West</option>--}}
+{{--                                        <option class="px-2 py-1 pointer cursor-pointer text-sm hover:bg-gray-100" value="imphal-east">Imphal East</option>--}}
+{{--                                    </x-select>--}}
+{{--                                </div>--}}
+{{--                                <div>--}}
+{{--                                    <label class="text-sm text-gray-600">Business Phone</label>--}}
+{{--                                    <x-input--}}
+{{--                                        icon="phone"--}}
+{{--                                        placeholder="Enter business phone"--}}
+{{--                                    ></x-input>--}}
+{{--                                </div>--}}
+{{--                                <div>--}}
+{{--                                    <label class="text-sm text-gray-600">Status</label>--}}
+{{--                                    <x-select input-name="status">--}}
+{{--                                        <option class="px-2 py-1 pointer cursor-pointer text-sm hover:bg-gray-100" value="active">Active</option>--}}
+{{--                                        <option class="px-2 py-1 pointer cursor-pointer text-sm hover:bg-gray-100" value="disabled">Disabled</option>--}}
+{{--                                    </x-select>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
 
-                            <x-slot name="footerButton">
-                                <x-button text="Add business" type="dark" class="p-3 leading-none text-sm"/>
-                            </x-slot>
-                        </x-modal>
+{{--                            <x-slot name="footerButton">--}}
+{{--                                <x-button text="Add business" type="dark" class="p-3 leading-none text-sm"/>--}}
+{{--                            </x-slot>--}}
+{{--                        </x-modal>--}}
                     </div>
                 </div>
             </div>
@@ -131,7 +131,7 @@
                 <x-table>
                     <x-slot name="head">
                         <x-table.heading class="w-16"><x-checkbox /></x-table.heading>
-                        <x-table.heading sortable>Name</x-table.heading>
+                        <x-table.heading class="md:w-2/5" sortable>Name</x-table.heading>
                         <x-table.heading sortable>Location</x-table.heading>
                         <x-table.heading sortable>Added on</x-table.heading>
                         <x-table.heading sortable>Status</x-table.heading>
@@ -150,17 +150,17 @@
                                     <x-badge type="green">Active</x-badge>
                                 </x-table.cell>
                                 <x-table.cell class="text-sm">
-                                    <x-button-group class="justify-end">
-                                        <x-action-button color="orange" icon="status">
+                                    <x-button.group class="justify-end">
+                                        <x-button.action icon="status">
                                             <div class="w-40 leading-none">
                                                 <p class="px-2 pt-3 text-xs uppercase text-gray-400">Change status to</p>
                                                 <button class="w-full text-left px-2 py-3 hover:bg-gray-100">Active</button>
                                                 <button class="w-full text-left px-2 py-3 hover:bg-gray-100">Disabled</button>
                                             </div>
-                                        </x-action-button>
-                                        <x-button icon="edit" class="text-gray-600"/>
-                                        <x-button icon="delete" class="text-gray-600"/>
-                                    </x-button-group>
+                                        </x-button.action>
+                                        <x-button.icon.edit class="text-gray-600"/>
+                                        <x-button.icon.delete class="text-gray-600"/>
+                                    </x-button.group>
                                 </x-table.cell>
                             </x-table.row>
                         @endfor

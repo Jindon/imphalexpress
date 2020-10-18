@@ -10,11 +10,7 @@
                 <x-title title="Login" subtitle="Login to the admin console"></x-title>
                 <x-input type="email" name="email" placeholder="Enter email"></x-input>
                 <x-input type="password" name="password" placeholder="Enter password"></x-input>
-                <x-button
-                    text="Login"
-                    class="py-3 px-4 text-center bg-orange-600 text-orange-100 hover:bg-orange-700"
-                    type="submit"
-                ></x-button>
+                <x-button.primary>Login</x-button.primary>
             </x-form>
         </div>
     </div>

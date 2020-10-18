@@ -11,15 +11,17 @@
             <div class="flex items-center md:justify-center space-x-8">
                 <a class="font-bold {{ request()->is('/') ? 'text-orange-600' : 'text-gray-500' }}" href="{{ route('home') }}">{{ __('Home') }}</a>
                 <a class="font-bold {{ request()->is('track') ? 'text-orange-600' : 'text-gray-500' }}" href="{{ route('track') }}">{{ __('Track') }}</a>
-                @if(auth()->user()->role == 'admin' || auth()->user()->role == 'superadmin')
-                <a class="font-bold {{ request()->is('admin/packages') ? 'text-orange-600' : 'text-gray-500' }}" href="{{ route('admin.packages') }}">{{ __('Packages') }}</a>
-                @endif
-                @if(auth()->user()->role == 'superadmin')
-                <a class="font-bold {{ request()->is('settings*') ? 'text-orange-600' : 'text-gray-500' }}" href="/settings/general">{{ __('Settings') }}</a>
-                @endif
-                <a class="font-bold text-gray-500" href="{{ route('logout') }}"
-                   onclick="event.preventDefault();document.getElementById('logout-form').submit();">{{ __('Logout') }}</a>
-                <x-form id="logout-form" action="{{ route('logout') }}" method="POST" class="hidden"></x-form>
+                @auth
+                    @if(auth()->user()->role == 'admin' || auth()->user()->role == 'superadmin')
+                        <a class="font-bold {{ request()->is('admin/packages') ? 'text-orange-600' : 'text-gray-500' }}" href="{{ route('admin.packages') }}">{{ __('Packages') }}</a>
+                    @endif
+                    @if(auth()->user()->role == 'superadmin')
+                        <a class="font-bold {{ request()->is('settings*') ? 'text-orange-600' : 'text-gray-500' }}" href="/settings/general">{{ __('Settings') }}</a>
+                    @endif
+                    <a class="font-bold text-gray-500" href="{{ route('logout') }}"
+                       onclick="event.preventDefault();document.getElementById('logout-form').submit();">{{ __('Logout') }}</a>
+                    <x-form id="logout-form" action="{{ route('logout') }}" method="POST" class="hidden"></x-form>
+                @endauth
             </div>
         </div>
         <div class="w-1/3 hidden md:block px-4 md:px-6">

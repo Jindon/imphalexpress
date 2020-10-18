@@ -1,6 +1,7 @@
 <?php
 
-use App\Http\Controllers\Admin\GeneralSettingsController;
+use App\Http\Controllers\Admin\Settings\AccountController;
+use App\Http\Controllers\Admin\Settings\GeneralSettingsController;
 use App\Http\Controllers\Admin\PackagesController;
 use App\Http\Controllers\Website\HomeController;
 use App\Http\Controllers\Website\TrackerController;
@@ -25,15 +26,16 @@ Route::middleware(['auth', 'admin'])->group(function () {
 });
 
 Route::middleware(['auth', 'superadmin'])->group(function () {
+
     Route::get('/settings/general', GeneralSettingsController::class)
         ->name('admin.settings.general');
+
     Route::get('/settings/businesses', function () {
         return view('admin.settings.businesses');
     });
     Route::get('/settings/users', function () {
         return view('admin.settings.users');
     });
-    Route::get('/settings/account', function () {
-        return view('admin.settings.account');
-    });
+    Route::get('/settings/account', AccountController::class)
+        ->name('admin.settings.account');
 });

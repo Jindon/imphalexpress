@@ -1,10 +1,22 @@
 <component name="InspectionProjectProfileManager">
   <profile version="1.0">
     <option name="myName" value="Project Default" />
+    <inspection_tool class="HtmlUnknownAttribute" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="myValues">
+        <value>
+          <list size="3">
+            <item index="0" class="java.lang.String" itemvalue="wire:loading.class" />
+            <item index="1" class="java.lang.String" itemvalue="wire:target" />
+            <item index="2" class="java.lang.String" itemvalue="wire:submit.prevent" />
+          </list>
+        </value>
+      </option>
+      <option name="myCustomValuesEnabled" value="true" />
+    </inspection_tool>
     <inspection_tool class="HtmlUnknownTag" enabled="true" level="WARNING" enabled_by_default="true">
       <option name="myValues">
         <value>
-          <list size="29">
+          <list size="41">
             <item index="0" class="java.lang.String" itemvalue="nobr" />
             <item index="1" class="java.lang.String" itemvalue="noembed" />
             <item index="2" class="java.lang.String" itemvalue="comment" />
@@ -34,6 +46,18 @@
             <item index="26" class="java.lang.String" itemvalue="x-dailogue" />
             <item index="27" class="java.lang.String" itemvalue="x-dialogue" />
             <item index="28" class="java.lang.String" itemvalue="x-form" />
+            <item index="29" class="java.lang.String" itemvalue="x-input.group" />
+            <item index="30" class="java.lang.String" itemvalue="x-button.dark" />
+            <item index="31" class="java.lang.String" itemvalue="x-button.outline-dotted" />
+            <item index="32" class="java.lang.String" itemvalue="x-button.icon.close" />
+            <item index="33" class="java.lang.String" itemvalue="x-button.default" />
+            <item index="34" class="java.lang.String" itemvalue="x-button.prmary" />
+            <item index="35" class="java.lang.String" itemvalue="x-button.primary" />
+            <item index="36" class="java.lang.String" itemvalue="x-button.danger" />
+            <item index="37" class="java.lang.String" itemvalue="x-notification" />
+            <item index="38" class="java.lang.String" itemvalue="x-button.group" />
+            <item index="39" class="java.lang.String" itemvalue="x-button.status" />
+            <item index="40" class="java.lang.String" itemvalue="x-button.dropdown" />
           </list>
         </value>
       </option>

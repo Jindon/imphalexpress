@@ -2,7 +2,7 @@
     'sortable' => null,
     'direction' => null,
 ])
-<th {{ $attributes->merge(['class' => 'px-2 py-4 text-left'])->only('class') }}>
+<th {{ $attributes->merge(['class' => 'px-2 md:px-4 py-4 text-left'])->only('class') }}>
     @unless($sortable)
         <div class="uppercase text-xs text-gray-600 tracking-wide">{{ $slot }}</div>
     @else

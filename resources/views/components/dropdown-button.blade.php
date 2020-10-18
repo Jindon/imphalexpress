@@ -12,7 +12,6 @@
     <x-button
         @click="open = !open"
         class="w-{{ $width }} flex justify-between items-center border border-gray-300 bg-white hover:bg-white rounded p-3 bg-gray-100"
-        text="Bulk action"
         icon="selector" icon-width="2"
     ></x-button>
 

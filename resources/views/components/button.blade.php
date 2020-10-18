@@ -23,13 +23,9 @@
     }
 @endphp
 <button
-    {{ $attributes->merge(['class' => 'flex items-start p-1 rounded border transition duration-200 focus:outline-none ' . $typeColor]) }}
+    {{ $attributes->merge(['class' => 'flex items-start px-4 py-3 text-sm rounded border transition duration-200 focus:outline-none ' . $typeColor]) }}
 >
-    @if($text)
-        <span class="@if($text && $icon) mr-2 @endif leading-none">
-            {{ $text }}
-        </span>
-    @endif
+    {{ $slot }}
 
     @if($icon)
         <x-icon type="{{ $icon }}" width="{{ $iconWidth }}"/>

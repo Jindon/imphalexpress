@@ -1,71 +1,53 @@
 @props([
-    'header' => null,
-    'width' => '3/5'
+    'id' => null,
+    'maxWidth'
 ])
-<div>
-    <div x-data="modal()" x-on:keydown.escape="close()">
-        <div @click="open()">
-            {{ $trigger }}
-        </div>
-        <div x-show="isOpening()" x-cloak>
-            <div
-                :class="{ 'opacity-0': isOpening(), 'opacity-100': isOpen() }"
-                class="fixed z-50 top-0 left-0 h-full w-full bg-black bg-opacity-50 transition duration-200 linear"
-            >
-                <div
-                    :class="{ 'mt-4': isOpening(), 'mt-8': isOpen() }"
-                    @click.away="close()"
-                    class="relative w-auto w-11/12 md:w-{{ $width }} mx-auto transition-all duration-200 ease-out mt-8"
-                >
-                    <div class="relative flex flex-col justify-between bg-white border rounded">
-                        <!-- Modal header -->
-                        <div class="w-full flex items-center justify-between p-4 border-b border-gray-300">
-                            <div class="w-4/5">
-                                <span class="text-orange-600 font-bold text-lg">{{ $header }}</span>
-                            </div>
-                            <button @click="close()" class="transition duration-200 hover:text-red-600">
-                                <x-icon type="close" />
-                            </button>
-                        </div>
 
-                        <!-- Modal body -->
-                        <div class="w-full p-4">
-                            {{ $slot }}
-                        </div>
+@php
+    $id = $id ?? md5($attributes->wire('model'));
 
-                        <!-- Modal footer -->
-                        <div class="border-t border-gray-300 p-4">
-                            <div class="flex justify-end items-center">
-                                <div class="flex items-center space-x-2">
-                                    <x-button @click="close()" text="Nevermind" type="secondary" class="p-3 leading-none text-sm"/>
-                                    {{ $footerButton }}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    switch ($maxWidth ?? '2xl') {
+        case 'sm':
+            $maxWidth = 'sm:max-w-sm';
+            break;
+        case 'md':
+            $maxWidth = 'sm:max-w-md';
+            break;
+        case 'lg':
+            $maxWidth = 'sm:max-w-lg';
+            break;
+        case 'xl':
+            $maxWidth = 'sm:max-w-xl';
+            break;
+        case '2xl':
+        default:
+            $maxWidth = 'sm:max-w-2xl';
+            break;
+    }
+@endphp
+
+<div id="{{ $id }}" x-data="{ show: @entangle($attributes->wire('model')) }"
+     x-show="show"
+     x-on:close.stop="show = false"
+     x-on:keydown.escape.window="show = false"
+     class="fixed top-0 inset-x-0 px-4 pt-6 sm:px-0 sm:flex sm:items-top sm:justify-center"
+     style="display: none;">
+    <div x-show="show" class="fixed inset-0 transform transition-all" x-on:click="show = false" x-transition:enter="ease-out duration-300"
+         x-transition:enter-start="opacity-0"
+         x-transition:enter-end="opacity-100"
+         x-transition:leave="ease-in duration-200"
+         x-transition:leave-start="opacity-100"
+         x-transition:leave-end="opacity-0">
+        <div class="absolute inset-0 bg-gray-500 opacity-75"></div>
     </div>
-    <script>
-        function modal() {
-            return {
-                state: 'CLOSED', // [CLOSED, TRANSITION, OPEN]
-                open() {
-                    this.state = 'TRANSITION'
-                    setTimeout(() => {
-                        this.state = 'OPEN'
-                        document.body.classList.add('overflow-y-hidden');
-                    }, 50)
-                },
-                close() {
-                    this.state = 'TRANSITION'
-                    setTimeout(() => { this.state = 'CLOSED' }, 100)
-                    document.body.classList.remove('overflow-y-hidden');
-                },
-                isOpen() { return this.state === 'OPEN' },
-                isOpening() { return this.state !== 'CLOSED' },
-            }
-        }
-    </script>
+
+    <div x-show="show" class="bg-white rounded-lg overflow-hidden shadow-xl transform transition-all sm:w-full {{ $maxWidth }}"
+         x-transition:enter="ease-out duration-300"
+         x-transition:enter-start="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+         x-transition:enter-end="opacity-100 translate-y-0 sm:scale-100"
+         x-transition:leave="ease-in duration-200"
+         x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100"
+         x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95">
+        {{ $slot }}
+    </div>
 </div>
