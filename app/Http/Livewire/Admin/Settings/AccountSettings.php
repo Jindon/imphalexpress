@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Http\Livewire\Admin\Settings;
 
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Support\Facades\Hash;
@@ -17,13 +17,11 @@ class AccountSettings extends Component
     public $currentPassword;
     public $showConfirmPasswordChange = false;
 
-    protected function rules() {
-        return [
-            'name' => 'required|max:125',
-            'phone' => 'sometimes|max:13',
-            'email' => 'required|email|unique:users,email,' . auth()->user()->id,
-        ];
-    }
+    protected function rules() { return [
+        'name' => 'required|max:125',
+        'phone' => 'sometimes|max:13',
+        'email' => 'required|email|unique:users,email,' . auth()->user()->id,
+    ]; }
 
     public function mount()
     {
@@ -42,7 +40,7 @@ class AccountSettings extends Component
             'email' => $this->email,
         ]);
 
-        $this->dispatchBrowserEvent('notify', 'Account details updated successfully!');
+        $this->notify('Account details updated successfully!');
     }
 
     public function updatePasswordConfirm()
@@ -62,10 +60,15 @@ class AccountSettings extends Component
             ]);
             $this->showConfirmPasswordChange = false;
             $this->reset(['newPassword', 'currentPassword']);
-            $this->dispatchBrowserEvent('notify', 'Password updated successfully!');
+            $this->notify('Password updated successfully!');
         } else {
             $this->addError('currentPassword', 'Wrong password entered!');
         }
+    }
 
+    public function render()
+    {
+        return view('livewire.admin.settings.account')
+            ->layout('layouts.settings');
     }
 }

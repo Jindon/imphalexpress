@@ -1,7 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dd1ec14b-fd79-4e3c-b062-204d4a645b9d" name="Default Changelist" comment="" />
+    <list default="true" id="dd1ec14b-fd79-4e3c-b062-204d4a645b9d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Csv.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Livewire/DataTable/WithBulkActions.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Livewire/DataTable/WithCachedRows.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Livewire/DataTable/WithPerPagePagination.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Livewire/DataTable/WithSorting.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/View/Components/SettingsLayout.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/components/button/icon/add.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/components/input/date.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/components/input/select.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/components/input/textarea.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/components/input/upload.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/layouts/settings.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/Settings/AccountController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/Settings/GeneralSettingsController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/AccountSettings.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Admin/Settings/AccountSettings.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/GeneralSettings.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Admin/Settings/GeneralSettings.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/LocationSettings.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Admin/Settings/LocationSettings.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/mail.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/mail.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/settings/account.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/settings/businesses.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/settings/general.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/settings/users.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/components/button/default.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/button/default.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/components/input/group.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/input/group.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/components/input/text.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/input/text.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/components/modal.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/modal.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/components/select.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/select.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/components/settings-layout.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/livewire/account-settings.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/admin/settings/account.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/livewire/general-settings.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/admin/settings/general.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/livewire/location-settings.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/admin/settings/location.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/website/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/website/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Feature/AccountSettingsTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/AccountSettingsTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Feature/GeneralSettingsTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/GeneralSettingsTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Feature/LocationSettingsTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/LocationSettingsTest.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -146,44 +186,46 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/components/button" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="configurable.group.editor" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\laragon\www\imphalexpress\app\Http\Controllers\Admin\Settings" />
-      <recent name="C:\laragon\www\imphalexpress\resources\views\admin\settings" />
-      <recent name="C:\laragon\www\imphalexpress\resources\views\components" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\laragon\www\imphalexpress\resources\views\components\button" />
-      <recent name="C:\laragon\www\imphalexpress\resources\views\components\button\icon" />
-      <recent name="C:\laragon\www\imphalexpress\resources\views\components" />
+      <recent name="C:\laragon\www\imphalexpress\app" />
       <recent name="C:\laragon\www\imphalexpress\resources\views\components\input" />
+      <recent name="C:\laragon\www\imphalexpress\app\Http\Livewire" />
       <recent name="C:\laragon\www\imphalexpress\app\View\Components" />
+      <recent name="C:\laragon\www\imphalexpress\resources\views\components\button\icon" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\laragon\www\imphalexpress\app\Http\Livewire\Admin\Settings" />
+      <recent name="C:\laragon\www\imphalexpress\resources\views\livewire\admin\settings" />
+      <recent name="C:\laragon\www\imphalexpress\resources\views\livewire\admin" />
+      <recent name="C:\laragon\www\imphalexpress\resources\views\layouts" />
+      <recent name="C:\laragon\www\imphalexpress\app\Http\Controllers\Admin\Settings" />
     </key>
   </component>
-  <component name="RunManager" selected="PHPUnit.AccountSettingsTest.admin_can_update_account_password">
+  <component name="RunManager" selected="PHPUnit.BusinessSettingsTest.general_settings_livewire_component_is_present">
+    <configuration name="AccountSettingsTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Feature\AccountSettingsTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/AccountSettingsTest.php" scope="Class" />
+      <method v="2" />
+    </configuration>
     <configuration name="AccountSettingsTest.account_settings_livewire_component_is_present" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
       <TestRunner class="Tests\Feature\AccountSettingsTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/AccountSettingsTest.php" method="account_settings_livewire_component_is_present" scope="Method" />
       <method v="2" />
     </configuration>
-    <configuration name="AccountSettingsTest.admin_can_update_account_details" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Tests\Feature\AccountSettingsTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/AccountSettingsTest.php" method="admin_can_update_account_details" scope="Method" />
+    <configuration name="BusinessSettingsTest.general_settings_livewire_component_is_present" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Feature\BusinessSettingsTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/BusinessSettingsTest.php" method="general_settings_livewire_component_is_present" scope="Method" />
       <method v="2" />
     </configuration>
-    <configuration name="AccountSettingsTest.admin_can_update_account_password" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Tests\Feature\AccountSettingsTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/AccountSettingsTest.php" method="admin_can_update_account_password" scope="Method" />
+    <configuration name="GeneralSettingsTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Feature\GeneralSettingsTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/GeneralSettingsTest.php" scope="Class" />
       <method v="2" />
     </configuration>
-    <configuration name="LocationSettingsTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Tests\Feature\LocationSettingsTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/LocationSettingsTest.php" scope="Class" />
-      <method v="2" />
-    </configuration>
-    <configuration name="LocationSettingsTest.admin_cannot_update_location" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Tests\Feature\LocationSettingsTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/LocationSettingsTest.php" method="admin_cannot_update_location" scope="Method" />
+    <configuration name="GeneralSettingsTest.general_settings_livewire_component_is_present" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Feature\GeneralSettingsTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/GeneralSettingsTest.php" method="general_settings_livewire_component_is_present" scope="Method" />
       <method v="2" />
     </configuration>
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -192,11 +234,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="PHPUnit.AccountSettingsTest.admin_can_update_account_password" />
-        <item itemvalue="PHPUnit.AccountSettingsTest.admin_can_update_account_details" />
+        <item itemvalue="PHPUnit.BusinessSettingsTest.general_settings_livewire_component_is_present" />
+        <item itemvalue="PHPUnit.AccountSettingsTest" />
         <item itemvalue="PHPUnit.AccountSettingsTest.account_settings_livewire_component_is_present" />
-        <item itemvalue="PHPUnit.LocationSettingsTest" />
-        <item itemvalue="PHPUnit.LocationSettingsTest.admin_cannot_update_location" />
+        <item itemvalue="PHPUnit.GeneralSettingsTest" />
+        <item itemvalue="PHPUnit.GeneralSettingsTest.general_settings_livewire_component_is_present" />
       </list>
     </recent_temporary>
   </component>
@@ -216,6 +258,7 @@
       <workItem from="1602837146481" duration="8495000" />
       <workItem from="1602999082541" duration="10029000" />
       <workItem from="1603031205489" duration="15961000" />
+      <workItem from="1603083741828" duration="37511000" />
     </task>
     <servers />
   </component>
@@ -235,38 +278,38 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="488" y="212" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.834@0.0.1536.834" timestamp="1602689838322" />
-    <state x="488" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1602766736308">
+    <state x="488" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1603085848223">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="488" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.834@0.0.1536.834" timestamp="1602766736308" />
-    <state x="499" y="172" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1603045832229">
+    <state x="488" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.834@0.0.1536.834" timestamp="1603085848223" />
+    <state x="499" y="172" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1603132439154">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="499" y="172" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.834@0.0.1536.834" timestamp="1603045832229" />
+    <state x="499" y="172" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.834@0.0.1536.834" timestamp="1603132439154" />
     <state x="532" y="328" width="472" height="282" key="ComposerInitDialogKey" timestamp="1602767892942">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="532" y="328" width="472" height="282" key="ComposerInitDialogKey/0.0.1536.834@0.0.1536.834" timestamp="1602767892942" />
-    <state x="549" y="172" key="FileChooserDialogImpl" timestamp="1603037568406">
+    <state x="549" y="172" key="FileChooserDialogImpl" timestamp="1603114085491">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="549" y="172" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1603037568406" />
-    <state width="1493" height="309" key="GridCell.Tab.0.bottom" timestamp="1603047242357">
+    <state x="549" y="172" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1603114085491" />
+    <state width="1493" height="201" key="GridCell.Tab.0.bottom" timestamp="1603089895324">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="309" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1603047242357" />
-    <state width="1493" height="309" key="GridCell.Tab.0.center" timestamp="1603047242357">
+    <state width="1493" height="201" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1603089895324" />
+    <state width="1493" height="201" key="GridCell.Tab.0.center" timestamp="1603089895324">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="309" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1603047242357" />
-    <state width="1493" height="309" key="GridCell.Tab.0.left" timestamp="1603047242356">
+    <state width="1493" height="201" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1603089895324" />
+    <state width="1493" height="201" key="GridCell.Tab.0.left" timestamp="1603089895309">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="309" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1603047242356" />
-    <state width="1493" height="309" key="GridCell.Tab.0.right" timestamp="1603047242357">
+    <state width="1493" height="201" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1603089895309" />
+    <state width="1493" height="201" key="GridCell.Tab.0.right" timestamp="1603089895324">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="309" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1603047242357" />
+    <state width="1493" height="201" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1603089895324" />
     <state x="604" y="342" key="NewPhpFileDialog" timestamp="1602585591451">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -275,17 +318,17 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="142" y="34" width="1174" height="709" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1602781823141" />
-    <state x="490" y="159" width="540" height="540" key="StructurePopup" timestamp="1603031382048">
+    <state x="490" y="159" width="540" height="540" key="StructurePopup" timestamp="1603121628541">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="490" y="159" width="540" height="540" key="StructurePopup/0.0.1536.834@0.0.1536.834" timestamp="1603031382048" />
+    <state x="490" y="159" width="540" height="540" key="StructurePopup/0.0.1536.834@0.0.1536.834" timestamp="1603121628541" />
     <state x="480" y="0" width="576" height="834" key="find.popup" timestamp="1602768444307">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="480" y="0" width="576" height="834" key="find.popup/0.0.1536.834@0.0.1536.834" timestamp="1602768444307" />
-    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1603046827507">
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1603133482558">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1603046827507" />
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1603133482558" />
   </component>
 </project>

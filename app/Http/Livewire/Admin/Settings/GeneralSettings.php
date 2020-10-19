@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Http\Livewire\Admin\Settings;
 
 use App\Models\Settings;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
@@ -42,6 +42,12 @@ class GeneralSettings extends Component
         Settings::whereIdentifier('contact-number')->update(['value' => $this->contactNumber]);
         Settings::whereIdentifier('callback-email')->update(['value' => $this->callbackEmail]);
 
-        $this->dispatchBrowserEvent('notify', 'Settings saved successfully!');
+        $this->notify('BusinessSettings saved successfully!');
+    }
+
+    public function render()
+    {
+        return view('livewire.admin.settings.general')
+            ->layout('layouts.settings');
     }
 }

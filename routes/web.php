@@ -1,10 +1,12 @@
 <?php
 
-use App\Http\Controllers\Admin\Settings\AccountController;
-use App\Http\Controllers\Admin\Settings\GeneralSettingsController;
 use App\Http\Controllers\Admin\PackagesController;
 use App\Http\Controllers\Website\HomeController;
 use App\Http\Controllers\Website\TrackerController;
+use App\Http\Livewire\Admin\Settings\AccountSettings;
+use App\Http\Livewire\Admin\Settings\BusinessSettings;
+use App\Http\Livewire\Admin\Settings\GeneralSettings;
+use App\Http\Livewire\Admin\Settings\UserSettings;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,15 +29,15 @@ Route::middleware(['auth', 'admin'])->group(function () {
 
 Route::middleware(['auth', 'superadmin'])->group(function () {
 
-    Route::get('/settings/general', GeneralSettingsController::class)
+    Route::get('/settings/general', GeneralSettings::class)
         ->name('admin.settings.general');
 
-    Route::get('/settings/businesses', function () {
-        return view('admin.settings.businesses');
-    });
-    Route::get('/settings/users', function () {
-        return view('admin.settings.users');
-    });
-    Route::get('/settings/account', AccountController::class)
+    Route::get('/settings/businesses', BusinessSettings::class)
+        ->name('admin.settings.businesses');
+
+    Route::get('/settings/users', UserSettings::class)
+        ->name('admin.settings.users');
+
+    Route::get('/settings/account', AccountSettings::class)
         ->name('admin.settings.account');
 });

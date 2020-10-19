@@ -1,13 +1,15 @@
 @props([
-    'label',
+    'label' => null,
     'for',
     'error',
 ])
 
-<div>
-    <label class="text-sm text-gray-600" for="{{ $for }}">
-        {{ $label }}
-    </label>
+<div {{ $attributes }}>
+    @if($label)
+        <label class="text-sm text-gray-600" for="{{ $for }}">
+            {{ $label }}
+        </label>
+    @endif
 
     {{ $slot }}
     @isset($error)

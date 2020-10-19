@@ -90,7 +90,7 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Markdown Mail Settings
+    | Markdown Mail BusinessSettings
     |--------------------------------------------------------------------------
     |
     | If you are using Markdown based email rendering, you may configure your

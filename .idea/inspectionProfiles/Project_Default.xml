@@ -16,7 +16,7 @@
     <inspection_tool class="HtmlUnknownTag" enabled="true" level="WARNING" enabled_by_default="true">
       <option name="myValues">
         <value>
-          <list size="41">
+          <list size="47">
             <item index="0" class="java.lang.String" itemvalue="nobr" />
             <item index="1" class="java.lang.String" itemvalue="noembed" />
             <item index="2" class="java.lang.String" itemvalue="comment" />
@@ -58,6 +58,12 @@
             <item index="38" class="java.lang.String" itemvalue="x-button.group" />
             <item index="39" class="java.lang.String" itemvalue="x-button.status" />
             <item index="40" class="java.lang.String" itemvalue="x-button.dropdown" />
+            <item index="41" class="java.lang.String" itemvalue="x-input.select" />
+            <item index="42" class="java.lang.String" itemvalue="x-input.text" />
+            <item index="43" class="java.lang.String" itemvalue="x-input.date" />
+            <item index="44" class="java.lang.String" itemvalue="x-textarea" />
+            <item index="45" class="java.lang.String" itemvalue="x-input.textarea" />
+            <item index="46" class="java.lang.String" itemvalue="x-input.upload" />
           </list>
         </value>
       </option>

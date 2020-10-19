@@ -2,7 +2,7 @@
 
 namespace Tests\Feature;
 
-use App\Http\Livewire\GeneralSettings;
+use App\Http\Livewire\Admin\Settings\GeneralSettings;
 use App\Models\Settings;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -19,7 +19,8 @@ class GeneralSettingsTest extends TestCase
     {
         $this->actingAs(User::factory()->create(['role' => 'superadmin']));
 
-        $this->get(route('admin.settings.general'))->assertSeeLivewire('general-settings');
+        $this->get(route('admin.settings.general'))
+            ->assertSeeLivewire('admin.settings.general-settings');
     }
 
     /** @test  */

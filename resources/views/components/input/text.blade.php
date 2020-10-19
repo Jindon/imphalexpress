@@ -1,13 +1,13 @@
 @props([
     'inputWidth' => 'full',
     'iconWidth' => '4',
-    'leadingAddOn' => null
+    'endingAddon' => null
 ])
 
 <div class="relative flex">
-    @if($leadingAddOn)
+    @if($endingAddon)
         <div class="absolute right-0 top-0 px-2 py-3 text-gray-400 pointer-events-none">
-            {{ $leadingAddOn }}
+            {{ $endingAddon }}
         </div>
     @endif
     <input

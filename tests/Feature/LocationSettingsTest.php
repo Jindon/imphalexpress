@@ -2,7 +2,7 @@
 
 namespace Tests\Feature;
 
-use App\Http\Livewire\LocationSettings;
+use App\Http\Livewire\Admin\Settings\LocationSettings;
 use App\Models\Location;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -20,7 +20,8 @@ class LocationSettingsTest extends TestCase
     {
         $this->actingAs(User::factory()->create(['role' => 'superadmin']));
 
-        $this->get(route('admin.settings.general'))->assertSeeLivewire('location-settings');
+        $this->get(route('admin.settings.general'))
+            ->assertSeeLivewire('admin.settings.location-settings');
     }
 
     /** @test*/

@@ -2,7 +2,7 @@
 
 namespace Tests\Feature;
 
-use App\Http\Livewire\AccountSettings;
+use App\Http\Livewire\Admin\Settings\AccountSettings;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
@@ -19,7 +19,8 @@ class AccountSettingsTest extends TestCase
     {
         $this->actingAs(User::factory()->create(['role' => 'superadmin']));
 
-        $this->get(route('admin.settings.account'))->assertSeeLivewire('account-settings');
+        $this->get(route('admin.settings.account'))
+            ->assertSeeLivewire('admin.settings.account-settings');
     }
 
     /** @test*/

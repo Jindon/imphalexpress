@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Http\Livewire\Admin\Settings;
 
 use App\Models\Location;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
@@ -49,7 +49,7 @@ class LocationSettings extends Component
         $message = isset($this->editLocation)
             ? 'Location updated successfully!'
             : 'New location added successfully';
-        $this->dispatchBrowserEvent('notify', $message);
+        $this->notify($message);
     }
 
     public function confirmDelete(Location $location)
@@ -70,12 +70,12 @@ class LocationSettings extends Component
         $this->deleteLocation->delete();
         $this->deleteLocation = null;
         $this->deleteConfirmation = false;
-        $this->dispatchBrowserEvent('notify', 'Location deleted successfully!');
+        $this->notify('Location deleted successfully!');
     }
 
     public function render()
     {
-        return view('livewire.location-settings', [
+        return view('livewire.admin.settings.location', [
             'locations' => Location::all(),
         ]);
     }

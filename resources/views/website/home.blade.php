@@ -79,7 +79,7 @@
                     <input class="p-2 pl-8 w-full rounded border border-gray-300 bg-gray-100 text-lg placeholder-gray-400" type="text" placeholder="Enter phone number">
                 </div>
 
-                <textarea class="p-2 w-full rounded border border-gray-300 bg-gray-100 text-lg placeholder-gray-400" placeholder="Input message (if any)" rows="4"></textarea>
+                <x-input.textarea placeholder="Input message (if any)" rows="4"></x-input.textarea>
 
                 <button class="p-4 w-full rounded bg-orange-600 text-gray-100 font-bold transition duration-200 hover:bg-orange-700">Request callback</button>
             </div>

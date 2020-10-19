@@ -16,7 +16,7 @@
             <x-button.outline-dotted class="w-full py-4" wire:click="$toggle('showForm')">+ Add location</x-button.outline-dotted>
         </div>
 
-        <!-- Add location modal -->
+        <!-- Location from modal -->
         <x-modal wire:model="showForm" id="addLocation" max-width="md">
             <div class="p-4 flex justify-between items-center">
                 <x-title title="Add location" title-size="text-lg md:text-xl"></x-title>
