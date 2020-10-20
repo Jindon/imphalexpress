@@ -5,6 +5,7 @@ namespace App\Http\Livewire\Admin\Settings;
 use App\Http\Livewire\DataTable\WithCachedRows;
 use App\Models\Business;
 use App\Models\Location;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Support\Carbon;
 use Livewire\Component;
 use App\Http\Livewire\DataTable\WithBulkActions;
@@ -14,6 +15,7 @@ use App\Http\Livewire\DataTable\WithSorting;
 class BusinessSettings extends Component
 {
     use WithPerPagePagination, WithSorting, WithBulkActions, WithCachedRows;
+    use AuthorizesRequests;
 
     public $showForm = false;
     public $name;
@@ -78,6 +80,7 @@ class BusinessSettings extends Component
 
     public function changeStatus(Business $business, $status)
     {
+        $this->authorize('settings');
         if($business->status != $status) {
             $business->update(['status' => $status == 1 ? 1 : 0]);
             $this->notify('Status changed successfully');
@@ -93,6 +96,7 @@ class BusinessSettings extends Component
 
     public function delete()
     {
+        $this->authorize('settings');
         try{
             Business::whereId($this->deleteId)->delete();
             $this->showConfirmDelete = false;
@@ -105,6 +109,7 @@ class BusinessSettings extends Component
 
     public function deleteSelected()
     {
+        $this->authorize('settings');
         if(!empty($this->selected)) {
             try{
                 $this->selectedRowsQuery->delete();
@@ -121,6 +126,7 @@ class BusinessSettings extends Component
 
     public function exportSelected()
     {
+        $this->authorize('settings');
         if(!empty($this->selected)) {
             return response()->streamDownload(function() {
                 echo $this->selectedRowsQuery->toCsv();
@@ -130,21 +136,16 @@ class BusinessSettings extends Component
 
     public function save()
     {
+        $this->authorize('settings');
         $data = $this->validate();
         try {
-            $this->saveBusiness($data);
+            $this->editBusiness
+                ? $this->editBusiness->update($data)
+                : Business::create($data);
             $this->reset();
             $this->notify('Business added successfully');
         } catch (\Exception $error) {
             dd($error);
-        }
-    }
-
-    protected function saveBusiness($data) {
-        if ($this->editBusiness) {
-            $this->editBusiness->update($data);
-        } else {
-            Business::create($data);
         }
     }
 
