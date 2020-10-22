@@ -26,12 +26,12 @@ class UserFactory extends Factory
         return [
             'location_id' => null,
             'name' => $this->faker->name,
-            'email' => 'jindon27@gmail.com',
+            'email' => $this->faker->email,
             'phone' => $this->faker->numberBetween(1000000000, 9999999999),
             'email_verified_at' => now(),
             'password' => Hash::make('welcome27'),
             'status' => true,
-            'role' => 'superadmin',
+            'role' => 'admin',
             'remember_token' => Str::random(10),
         ];
     }

@@ -136,11 +136,11 @@
                         <x-table.cell colspan="7" class="bg-orange-100">
                             @unless($selectAll)
                                 <div>
-                                    <span>You have selected <strong>{{ $packages->count() }}</strong> businesses, do you want to select all <strong>{{ $packages->total() }}</strong> businesses?</span>
+                                    <span>You have selected <strong>{{ $packages->count() }}</strong> packages, do you want to select all <strong>{{ $packages->total() }}</strong> packages?</span>
                                     <button wire:click="selectAll" class="ml-2 hover:underline text-blue-600">Select all</button>
                                 </div>
                             @else
-                                <span>You have selected all <strong>{{ $packages->total() }}</strong> businesses.</span>
+                                <span>You have selected all <strong>{{ $packages->total() }}</strong> packages.</span>
                             @endif
                         </x-table.cell>
                     </x-table.row>
@@ -186,7 +186,7 @@
                     <x-table.row>
                         <x-table.cell colspan="8">
                             <div class="w-full flex justify-center py-10 text-gray-500">
-                                No business found..
+                                No package found..
                             </div>
                         </x-table.cell>
                     </x-table.row>

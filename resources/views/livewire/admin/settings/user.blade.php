@@ -1,138 +1,35 @@
 <div>
     <div class="w-full" x-data="{ openAdvancedSearch: false }">
 
-        <div class="flex flex-col md:flex-row items-center justify-between mt-4 md:mt-6 space-y-2 md:space-y-0">
+        <div class="flex flex-col md:flex-row items-center justify-between mt-4 md:mt-6">
             <div class="flex flex-col md:flex-row items-center space-x-4 space-y-2">
                 <div>
-                    <x-input placeholder="Search packages..." icon="search"/>
+                    <x-input.text wire:model="filters.search" placeholder="Search packages..." icon="search">
+                        <x-slot name="endingAddon"><x-icon type="search" /></x-slot>
+                    </x-input.text>
                 </div>
-                <button
-                    class="text-gray-500 focus:outline-none"
-                    @click="openAdvancedSearch = !openAdvancedSearch"
-                    x-text="openAdvancedSearch ? 'Close advance search...' : 'Advanced search...'"
-                ></button>
             </div>
             <div class="flex flex-col md:flex-row items-center justify-between space-x-0 space-y-2 md:space-x-2 md:space-y-0">
 
                 <div class="flex items-center space-x-2">
                     <label for="limit" class="w-full text-right">Per page</label>
-                    <x-select input-name="per_page" :initial-value="10" input-width="32">
+                    <x-input.select id="limit" wire:model="perPage" input-width="32">
                         <option class="px-2 py-1 pointer cursor-pointer text-sm hover:bg-gray-100" value="10">10</option>
-                        <option class="px-2 py-1 pointer cursor-pointer text-sm hover:bg-gray-100" value="30">30</option>
+                        <option class="px-2 py-1 pointer cursor-pointer text-sm hover:bg-gray-100" value="25">25</option>
                         <option class="px-2 py-1 pointer cursor-pointer text-sm hover:bg-gray-100" value="50">50</option>
-                        <option class="px-2 py-1 pointer cursor-pointer text-sm hover:bg-gray-100" value="100">100</option>
-                    </x-select>
+                    </x-input.select>
                 </div>
 
                 <div>
-                    <x-dropdown-button trigger="Bulk option" width="48">
-                        <div>
-                            <p class="px-2 pt-3 uppercase text-xs text-gray-600">Change status to</p>
-                            <ul>
-                                <li class="px-2 py-1 pointer cursor-pointer text-sm hover:bg-gray-100">Active</li>
-                                <li class="px-2 py-1 pointer cursor-pointer text-sm hover:bg-gray-100">Disabled</li>
-                            </ul>
-                            <p class="px-2 pt-3 uppercase text-xs text-gray-600">Actions</p>
-                            <ul>
-                                <li class="px-2 py-1 pointer cursor-pointer text-sm hover:bg-gray-100">Delete</li>
-                                <li class="px-2 py-1 pointer cursor-pointer text-sm hover:bg-gray-100">Download</li>
-                            </ul>
+                    <x-button.dropdown trigger="Bulk option" width="48">
+                        <div class="py-2">
+                            <button wire:click="$toggle('showConfirmDeleteSelected', true)" class="w-full px-4 py-2 text-left pointer cursor-pointer text-sm hover:bg-gray-100">Delete</button>
+                            <button wire:click="exportSelected" class="w-full px-4 py-2 text-left pointer cursor-pointer text-sm hover:bg-gray-100">Export CSV</button>
                         </div>
-                    </x-dropdown-button>
+                    </x-button.dropdown>
                 </div>
-
                 <div>
-                    <x-modal header="Add package" width="2/5">
-                        <x-slot name="trigger">
-                            <x-button
-                                icon="add"
-                                class="border border-gray-300 border-orange-600 text-orange-600 hover:bg-orange-700 hover:text-orange-100 rounded p-3"
-                            ></x-button>
-                        </x-slot>
-                        <!-- Body -->
-                        <div class="grid grids-cols-1 md:grid-cols-2 gap-2">
-                            <div>
-                                <label class="text-sm text-gray-600">Full Name</label>
-                                <x-input
-                                    placeholder="Enter full name"
-                                ></x-input>
-                            </div>
-                            <div>
-                                <label class="text-sm text-gray-600">Email</label>
-                                <x-input
-                                    icon="email"
-                                    type="email"
-                                    placeholder="Enter email address"
-                                ></x-input>
-                            </div>
-                            <div>
-                                <label class="text-sm text-gray-600">Phone</label>
-                                <x-input
-                                    icon="phone"
-                                    placeholder="Enter phone"
-                                ></x-input>
-                            </div>
-                            <div>
-                                <label class="text-sm text-gray-600">Location</label>
-                                <x-select input-name="delivery_location">
-                                    <option class="px-2 py-1 pointer cursor-pointer text-sm hover:bg-gray-100" value="">Select location</option>
-                                    <option class="px-2 py-1 pointer cursor-pointer text-sm hover:bg-gray-100" value="imphal-west">Imphal West</option>
-                                    <option class="px-2 py-1 pointer cursor-pointer text-sm hover:bg-gray-100" value="imphal-east">Imphal East</option>
-                                </x-select>
-                            </div>
-                            <div>
-                                <label class="text-sm text-gray-600">Status</label>
-                                <x-select input-name="status">
-                                    <option class="px-2 py-1 pointer cursor-pointer text-sm hover:bg-gray-100" value="active">Active</option>
-                                    <option class="px-2 py-1 pointer cursor-pointer text-sm hover:bg-gray-100" value="disabled">Disabled</option>
-                                </x-select>
-                            </div>
-                            <div>
-                                <label class="text-sm text-gray-600">Password</label>
-                                <x-input placeholder="Enter password" type="password"></x-input>
-                            </div>
-                        </div>
-
-                        <x-slot name="footerButton">
-                            <x-button text="Add business" type="dark" class="p-3 leading-none text-sm"/>
-                        </x-slot>
-                    </x-modal>
-                </div>
-            </div>
-        </div>
-
-        <!-- Advanced search -->
-        <div x-show="openAdvancedSearch" x-cloak class="py-2">
-            <div class="bg-gray-100 border border-gray-300 rounded p-4">
-                <div class="flex justify-between items-center">
-                    <p class="text-orange-600">Advanced search</p>
-                    <button class="text-red-400 transition delay-200 hover:text-red-600">Clear filter</button>
-                </div>
-                <div class="grid grids-cols-2 md:grid-cols-3 gap-2 mt-4">
-                    <div>
-                        <label class="text-sm text-gray-600">Status</label>
-                        <x-select input-name="status" initial-value="all">
-                            <option class="px-2 py-1 pointer cursor-pointer text-sm hover:bg-gray-100" value="all">All status</option>
-                            <option class="px-2 py-1 pointer cursor-pointer text-sm hover:bg-gray-100" value="active">Active</option>
-                            <option class="px-2 py-1 pointer cursor-pointer text-sm hover:bg-gray-100" value="disabled">Diabled</option>
-                        </x-select>
-                    </div>
-                    <div>
-                        <label class="text-sm text-gray-600">Added on min date</label>
-                        <x-date-picker id="collectedMinDate" name="added_min_date"/>
-                    </div>
-                    <div>
-                        <label class="text-sm text-gray-600">Added on max date</label>
-                        <x-date-picker id="collectedMaxDate" name="added_max_date"/>
-                    </div>
-                    <div>
-                        <label class="text-sm text-gray-600">Location</label>
-                        <x-select input-name="business_location" initial-value="all">
-                            <option class="px-2 py-1 pointer cursor-pointer text-sm hover:bg-gray-100" value="all">All locations</option>
-                            <option class="px-2 py-1 pointer cursor-pointer text-sm hover:bg-gray-100" value="imphal-west">Imphal West</option>
-                            <option class="px-2 py-1 pointer cursor-pointer text-sm hover:bg-gray-100" value="imphal-east">Imphal East</option>
-                        </x-select>
-                    </div>
+                    <x-button.icon.add wire:click="toggleShowForm" icon-width="5" class="p-3" />
                 </div>
             </div>
         </div>
@@ -141,53 +38,174 @@
         <div class="mt-4">
             <x-table>
                 <x-slot name="head">
-                    <x-table.heading class="w-16"><x-checkbox /></x-table.heading>
-                    <x-table.heading sortable>Full Name</x-table.heading>
-                    <x-table.heading sortable>Location</x-table.heading>
+                    <x-table.heading class="w-16"><x-checkbox wire:model="selectPage"/></x-table.heading>
+                    <x-table.heading sortable wire:click="sortBy('name')" :direction="$sorts['name'] ?? null">Name</x-table.heading>
+                    <x-table.heading sortable wire:click="sortBy('location_id')" :direction="$sorts['location_id'] ?? null">Location</x-table.heading>
                     <x-table.heading>Phone</x-table.heading>
-                    <x-table.heading sortable>Added on</x-table.heading>
-                    <x-table.heading sortable>Status</x-table.heading>
+                    <x-table.heading>Email</x-table.heading>
+                    <x-table.heading sortable wire:click="sortBy('created_at')" :direction="$sorts['created_at'] ?? null">Added on</x-table.heading>
+                    <x-table.heading sortable wire:click="sortBy('status')" :direction="$sorts['status'] ?? null">Status</x-table.heading>
                     <x-table.heading class="text-right">Actions</x-table.heading>
                 </x-slot>
                 <x-slot name="body">
-                    @for($i = 0; $i <10; $i += 1)
-                        <x-table.row class="{{ $i % 2 !== 0 ? 'bg-gray-100' : '' }}">
-                            <x-table.cell class="text-sm"><x-checkbox /></x-table.cell>
-                            <x-table.cell class="text-sm">Karam Rockyson</x-table.cell>
-                            <x-table.cell class="text-sm">
-                                <p class="text-blue-600 font-bold">Imphal West</p>
-                            </x-table.cell>
-                            <x-table.cell class="text-sm">9874521036</x-table.cell>
-                            <x-table.cell class="text-sm">{{ now()->format('d/m/Y') }}</x-table.cell>
-                            <x-table.cell class="text-sm">
-                                <x-badge type="green">Active</x-badge>
-                            </x-table.cell>
-                            <x-table.cell class="text-sm">
-                                <x-button-group class="justify-end">
-                                    <x-action-button color="orange" icon="status">
-                                        <div class="w-40 leading-none">
-                                            <p class="px-2 pt-3 text-xs uppercase text-gray-400">Change status to</p>
-                                            <button class="w-full text-left px-2 py-3 hover:bg-gray-100">Active</button>
-                                            <button class="w-full text-left px-2 py-3 hover:bg-gray-100">Disabled</button>
-                                        </div>
-                                    </x-action-button>
-                                    <x-button icon="edit" class="text-gray-600"/>
-                                    <x-dialogue title="Delete user">
-                                        <x-slot name="trigger">
-                                            <x-button icon="delete" class="text-gray-600"/>
-                                        </x-slot>
-                                        <p class="text-gray-600">{{ __('Are you sure you would like to delete this user? All user data will be lost. This action cannot be undone.') }}</p>
-                                        <x-slot name="footerButton">
-                                            <x-button text="Delete" class="p-3 bg-red-500 text-red-100 hover:bg-red-600"></x-button>
-                                        </x-slot>
-                                    </x-dialogue>
-                                </x-button-group>
+                    @if($users->total() > 0 && $selectPage)
+                        <x-table.row>
+                            <x-table.cell colspan="8" class="bg-orange-100">
+                                @unless($selectAll)
+                                    <div>
+                                        <span>You have selected <strong>{{ $users->count() }}</strong> users, do you want to select all <strong>{{ $users->total() }}</strong> users?</span>
+                                        <button wire:click="selectAll" class="ml-2 hover:underline text-blue-600">Select all</button>
+                                    </div>
+                                @else
+                                    <span>You have selected all <strong>{{ $users->total() }}</strong> users.</span>
+                                @endif
                             </x-table.cell>
                         </x-table.row>
-                    @endfor
+                    @endif
+
+                    @forelse($users as $index => $user)
+                        <x-table.row class="{{ $index % 2 !== 0 ? 'bg-gray-100' : '' }}" wire:loading.class.delay="opacity-50" wire:key="row-{{ $user->id }}">
+                            <x-table.cell class="text-sm"><x-checkbox wire:model="selected" value="{{ $user->id }}"/></x-table.cell>
+                            <x-table.cell class="text-sm">{{ $user->name }}</x-table.cell>
+                            <x-table.cell class="text-sm">{{ $user->location->name }}</x-table.cell>
+                            <x-table.cell class="text-sm">{{ $user->phone }}</x-table.cell>
+                            <x-table.cell class="text-sm">{{ $user->email }}</x-table.cell>
+                            <x-table.cell class="text-sm">{{ $user->created_at_formatted }}</x-table.cell>
+                            <x-table.cell class="text-sm">
+                                <x-badge :color="$user->status ? 'green' : 'red'">{{ $user->getStatus() }}</x-badge>
+                            </x-table.cell>
+                            <x-table.cell class="text-sm">
+                                <x-button.group class="justify-end">
+                                    <x-button.action icon="status">
+                                        <div class="w-40 leading-none">
+                                            <p class="px-2 pt-3 text-xs uppercase text-gray-400">Change status to</p>
+                                            <button wire:click="changeStatus({{ $user->id }}, 1)" class="w-full text-left px-2 py-3 hover:bg-gray-100">Active</button>
+                                            <button wire:click="changeStatus({{ $user->id }}, 0)" class="w-full text-left px-2 py-3 hover:bg-gray-100">Disabled</button>
+                                        </div>
+                                    </x-button.action>
+                                    <x-button.icon.edit wire:click="editUser({{ $user->id }})" class="text-gray-600"/>
+                                    <x-button.icon.delete wire:click="confirmDelete({{ $user->id }})" class="text-gray-600"/>
+                                </x-button.group>
+                            </x-table.cell>
+                        </x-table.row>
+                    @empty
+                        <x-table.row>
+                            <x-table.cell colspan="8">
+                                <div class="w-full flex justify-center py-10 text-gray-500">
+                                    No users found..
+                                </div>
+                            </x-table.cell>
+                        </x-table.row>
+                    @endforelse
                 </x-slot>
             </x-table>
+
+            <div class="mt-4">
+                {{ $users->links() }}
+            </div>
         </div>
 
     </div>
+
+    <!-- Business form modal -->
+    <x-modal wire:model="showForm">
+        <div class="p-4 flex justify-between items-center">
+            <x-title title="Add business" title-size="text-lg md:text-xl"></x-title>
+            <div>
+                <x-button.icon.close icon-width="3" class="p-2" wire:click="toggleShowForm"></x-button.icon.close>
+            </div>
+        </div>
+        <div class="p-4">
+            <form wire:submit.prevent="save">
+                <div class="grid grids-cols-1 md:grid-cols-2 gap-2">
+                    <div>
+                        <x-input.group type="text" label="Full name *" for="name" :error="$errors->first('name')">
+                            <x-input.text wire:model="name" id="name" placeholder="Enter full name" required></x-input.text>
+                        </x-input.group>
+                    </div>
+                    <div>
+                        <x-input.group type="text" label="Location *" for="location" :error="$errors->first('location_id')">
+                            <x-input.select wire:model="location_id" id="location">
+                                <option class="px-2 py-1 pointer cursor-pointer text-sm hover:bg-gray-100" value="">Select location</option>
+                                @foreach($locations as $location)
+                                    <option class="px-2 py-1 pointer cursor-pointer text-sm hover:bg-gray-100" value="{{ $location->id }}">
+                                        {{ $location->name }}
+                                    </option>
+                                @endforeach
+                            </x-input.select>
+                        </x-input.group>
+                    </div>
+                    <div>
+                        <x-input.group type="text" label="Phone" for="phone" :error="$errors->first('phone')">
+                            <x-input.text wire:model="phone" id="phone" placeholder="Enter user phone"></x-input.text>
+                        </x-input.group>
+                    </div>
+                    <div>
+                        <x-input.group type="text" label="Email address *" for="email" :error="$errors->first('email')">
+                            <x-input.text wire:model="email" id="email" type="email" placeholder="user@email.com" required></x-input.text>
+                        </x-input.group>
+                    </div>
+                    <div>
+                        <x-input.group type="text" label="Password *" for="password" :error="$errors->first('password')">
+                            <x-input.password wire:model="password" id="password" placeholder="********" required></x-input.password>
+                        </x-input.group>
+                    </div>
+                    <div>
+                        <x-input.group type="text" label="Status *" for="status" :error="$errors->first('status')">
+                            <x-input.select id="status" wire:model="status">
+                                <option class="px-2 py-1 pointer cursor-pointer text-sm hover:bg-gray-100" value="1">Active</option>
+                                <option class="px-2 py-1 pointer cursor-pointer text-sm hover:bg-gray-100" value="0">Disabled</option>
+                            </x-input.select>
+                        </x-input.group>
+                    </div>
+                </div>
+                <input type="submit" class="hidden">
+            </form>
+        </div>
+        <div class="p-4 bg-gray-100">
+            <div class="flex md:justify-end items-center space-x-2">
+                <x-button.default wire:click="toggleShowForm">Nevermind</x-button.default>
+                <x-button.dark wire:click="save">Save business</x-button.dark>
+            </div>
+        </div>
+    </x-modal>
+
+    <!-- Confirm delete business modal -->
+    <x-modal wire:model.defer="showConfirmDelete" max-width="md">
+        <div class="p-4 flex justify-between items-center">
+            <x-title title="Delete user" title-size="text-lg md:text-xl"></x-title>
+            <div>
+                <x-button.icon.close icon-width="3" class="p-2" wire:click="$set('showConfirmDelete', false)"></x-button.icon.close>
+            </div>
+        </div>
+        <div class="p-4">
+            Are you sure you want to delete this user? This action is not irreversible.
+        </div>
+        <div class="p-4 bg-gray-100">
+            <div class="flex md:justify-end items-center space-x-2">
+                <x-button.default wire:click="$set('showConfirmDelete', false)">Nevermind</x-button.default>
+                <x-button.danger wire:click="delete">Delete</x-button.danger>
+            </div>
+        </div>
+    </x-modal>
+
+    <!-- Confirm delete selected businesses modal -->
+    <x-modal wire:model.defer="showConfirmDeleteSelected" max-width="md">
+        <div class="p-4 flex justify-between items-center">
+            <x-title title="Delete selected businesses" title-size="text-lg md:text-xl"></x-title>
+            <div>
+                <x-button.icon.close icon-width="3" class="p-2" wire:click="$set('showConfirmDeleteSelected', false)"></x-button.icon.close>
+            </div>
+        </div>
+        <div class="p-4">
+            Are you sure you want to delete the selected businesses? This action is not irreversible.
+        </div>
+        <div class="p-4 bg-gray-100">
+            <div class="flex md:justify-end items-center space-x-2">
+                <x-button.default wire:click="$set('showConfirmDeleteSelected', false)">Nevermind</x-button.default>
+                <x-button.danger wire:click="deleteSelected">Delete</x-button.danger>
+            </div>
+        </div>
+    </x-modal>
+
 </div>

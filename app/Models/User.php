@@ -46,4 +46,19 @@ class User extends Authenticatable
     {
         return $this->role === 'superadmin';
     }
+
+    public function getCreatedAtFormattedAttribute()
+    {
+        return $this->created_at->format('d/m/Y');
+    }
+
+    public function getStatus()
+    {
+        return $this->status ? 'Active' : 'Inactive';
+    }
+
+    public function location()
+    {
+        return $this->belongsTo(Location::class);
+    }
 }

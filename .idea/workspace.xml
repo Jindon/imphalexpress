@@ -2,12 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dd1ec14b-fd79-4e3c-b062-204d4a645b9d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/views/components/input/password.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Livewire/Admin/ManagePackages.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Admin/ManagePackages.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/Admin/Settings/BusinessSettings.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Admin/Settings/BusinessSettings.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/Admin/Settings/UserSettings.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Admin/Settings/UserSettings.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/factories/UserFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/UserFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/components/icon.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/icon.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/components/table.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/table.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/livewire/admin/manage-packages.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/admin/manage-packages.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/website/track.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/website/track.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/livewire/admin/settings/user.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/admin/settings/user.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Feature/BusinessSettingsTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/BusinessSettingsTest.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -153,19 +160,12 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/components/input" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="configurable.group.editor" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\laragon\www\imphalexpress\app" />
-      <recent name="C:\laragon\www\imphalexpress\resources\views\components\input" />
-      <recent name="C:\laragon\www\imphalexpress\app\Http\Livewire" />
-      <recent name="C:\laragon\www\imphalexpress\app\View\Components" />
-      <recent name="C:\laragon\www\imphalexpress\resources\views\components\button\icon" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\laragon\www\imphalexpress\app\Http\Livewire\Admin\Settings" />
       <recent name="C:\laragon\www\imphalexpress\resources\views\livewire\admin\settings" />
@@ -173,26 +173,33 @@
       <recent name="C:\laragon\www\imphalexpress\resources\views\layouts" />
       <recent name="C:\laragon\www\imphalexpress\app\Http\Controllers\Admin\Settings" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\laragon\www\imphalexpress\resources\views\components\input" />
+      <recent name="C:\laragon\www\imphalexpress\app" />
+      <recent name="C:\laragon\www\imphalexpress\app\Http\Livewire" />
+      <recent name="C:\laragon\www\imphalexpress\app\View\Components" />
+      <recent name="C:\laragon\www\imphalexpress\resources\views\components\button\icon" />
+    </key>
   </component>
-  <component name="RunManager" selected="PHPUnit.PackageManagementTest.admin_can_delete_selected_package">
-    <configuration name="BusinessSettingsTest.superadmin_can_delete_selected_businesses" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Tests\Feature\BusinessSettingsTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/BusinessSettingsTest.php" method="superadmin_can_delete_selected_businesses" scope="Method" />
+  <component name="RunManager" selected="PHPUnit.UserSettingsTest.superadmin_can_delete_selected_user">
+    <configuration name="UserSettingsTest.superadmin_can_delete_selected_user" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Feature\UserSettingsTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/UserSettingsTest.php" method="superadmin_can_delete_selected_user" scope="Method" />
       <method v="2" />
     </configuration>
-    <configuration name="PackageManagementTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Tests\Feature\PackageManagementTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/PackageManagementTest.php" scope="Class" />
+    <configuration name="UserSettingsTest.superadmin_can_delete_user" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Feature\UserSettingsTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/UserSettingsTest.php" method="superadmin_can_delete_user" scope="Method" />
       <method v="2" />
     </configuration>
-    <configuration name="PackageManagementTest.admin_can_change_package_status" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Tests\Feature\PackageManagementTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/PackageManagementTest.php" method="admin_can_change_package_status" scope="Method" />
+    <configuration name="UserSettingsTest.superadmin_can_update_business" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Feature\UserSettingsTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/UserSettingsTest.php" method="superadmin_can_update_business" scope="Method" />
       <method v="2" />
     </configuration>
-    <configuration name="PackageManagementTest.admin_can_delete_package" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Tests\Feature\PackageManagementTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/PackageManagementTest.php" method="admin_can_delete_package" scope="Method" />
+    <configuration name="UserSettingsTest.superadmin_can_update_status" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Feature\UserSettingsTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/UserSettingsTest.php" method="superadmin_can_update_status" scope="Method" />
       <method v="2" />
     </configuration>
-    <configuration name="PackageManagementTest.admin_can_delete_selected_package" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Tests\Feature\PackageManagementTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/PackageManagementTest.php" method="admin_can_delete_selected_package" scope="Method" />
+    <configuration name="UserSettingsTest.superadmin_can_update_user_password" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Feature\UserSettingsTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/UserSettingsTest.php" method="superadmin_can_update_user_password" scope="Method" />
       <method v="2" />
     </configuration>
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -201,11 +208,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="PHPUnit.PackageManagementTest.admin_can_delete_selected_package" />
-        <item itemvalue="PHPUnit.BusinessSettingsTest.superadmin_can_delete_selected_businesses" />
-        <item itemvalue="PHPUnit.PackageManagementTest" />
-        <item itemvalue="PHPUnit.PackageManagementTest.admin_can_delete_package" />
-        <item itemvalue="PHPUnit.PackageManagementTest.admin_can_change_package_status" />
+        <item itemvalue="PHPUnit.UserSettingsTest.superadmin_can_delete_selected_user" />
+        <item itemvalue="PHPUnit.UserSettingsTest.superadmin_can_delete_user" />
+        <item itemvalue="PHPUnit.UserSettingsTest.superadmin_can_update_user_password" />
+        <item itemvalue="PHPUnit.UserSettingsTest.superadmin_can_update_status" />
+        <item itemvalue="PHPUnit.UserSettingsTest.superadmin_can_update_business" />
       </list>
     </recent_temporary>
   </component>
@@ -228,7 +235,7 @@
       <workItem from="1603083741828" duration="37703000" />
       <workItem from="1603174807987" duration="4555000" />
       <workItem from="1603293019936" duration="9324000" />
-      <workItem from="1603345750652" duration="25265000" />
+      <workItem from="1603345750652" duration="35336000" />
     </task>
     <servers />
   </component>
@@ -252,10 +259,10 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="488" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.834@0.0.1536.834" timestamp="1603085848223" />
-    <state x="499" y="172" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1603368059779">
+    <state x="499" y="172" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1603387718233">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="499" y="172" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.834@0.0.1536.834" timestamp="1603368059779" />
+    <state x="499" y="172" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.834@0.0.1536.834" timestamp="1603387718233" />
     <state x="532" y="328" width="472" height="282" key="ComposerInitDialogKey" timestamp="1602767892942">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -264,22 +271,22 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="549" y="172" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1603114085491" />
-    <state width="1493" height="208" key="GridCell.Tab.0.bottom" timestamp="1603373980549">
+    <state width="1493" height="252" key="GridCell.Tab.0.bottom" timestamp="1603388001901">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="208" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1603373980549" />
-    <state width="1493" height="208" key="GridCell.Tab.0.center" timestamp="1603373980549">
+    <state width="1493" height="252" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1603388001901" />
+    <state width="1493" height="252" key="GridCell.Tab.0.center" timestamp="1603388001901">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="208" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1603373980549" />
-    <state width="1493" height="208" key="GridCell.Tab.0.left" timestamp="1603373980549">
+    <state width="1493" height="252" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1603388001901" />
+    <state width="1493" height="252" key="GridCell.Tab.0.left" timestamp="1603388001901">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="208" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1603373980549" />
-    <state width="1493" height="208" key="GridCell.Tab.0.right" timestamp="1603373980549">
+    <state width="1493" height="252" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1603388001901" />
+    <state width="1493" height="252" key="GridCell.Tab.0.right" timestamp="1603388001901">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="208" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1603373980549" />
+    <state width="1493" height="252" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1603388001901" />
     <state x="604" y="342" key="NewPhpFileDialog" timestamp="1602585591451">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -296,9 +303,13 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="480" y="0" width="576" height="834" key="find.popup/0.0.1536.834@0.0.1536.834" timestamp="1602768444307" />
-    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1603374004074">
+    <state x="425" y="189" key="run.anything.popup" timestamp="1603387177260">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1603374004074" />
+    <state x="425" y="189" key="run.anything.popup/0.0.1536.834@0.0.1536.834" timestamp="1603387177260" />
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1603387249584">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1603387249584" />
   </component>
 </project>

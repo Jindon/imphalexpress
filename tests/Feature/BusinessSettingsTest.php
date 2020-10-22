@@ -16,7 +16,7 @@ class BusinessSettingsTest extends TestCase
     use RefreshDatabase;
 
     /** @test*/
-    public function general_settings_livewire_component_is_present()
+    public function business_settings_livewire_component_is_present()
     {
         $this->actingAs(User::factory()->create(['role' => 'superadmin']));
 
@@ -78,7 +78,7 @@ class BusinessSettingsTest extends TestCase
             ->assertDispatchedBrowserEvent('notify');
 
         $this->assertTrue(Business::whereName('Test business')->whereLocationId($location->id)->exists());
-        $this->assertTrue(Business::whereLocationId($location->id)->count() === 1,true);
+        $this->assertTrue(Business::whereLocationId($location->id)->count() === 1);
     }
 
     /** @test*/

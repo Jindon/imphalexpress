@@ -78,7 +78,6 @@ class ManagePackages extends Component
     public function mount()
     {
         $this->initialSort();
-        $this->package = Package::make();
     }
 
     protected function initialSort(){ $this->sorts = ['collected_on' => 'desc']; }

@@ -51,6 +51,9 @@ class BusinessSettings extends Component
         'location_id.required' => 'The location field cannot be empty.',
     ];
 
+    public function mount() { $this->initialSort(); }
+    protected function initialSort(){ $this->sorts = ['created_at' => 'desc']; }
+
 //    protected $queryString = ['sortField', 'sortDirection'];
 
     public function updatedFilters(){ $this->resetPage(); }
@@ -83,6 +86,7 @@ class BusinessSettings extends Component
         $this->authorize('settings');
         if($business->status != $status) {
             $business->update(['status' => $status == 1 ? 1 : 0]);
+            $this->initialSort();
             $this->notify('Status changed successfully');
         }
     }
@@ -101,6 +105,7 @@ class BusinessSettings extends Component
             Business::whereId($this->deleteId)->delete();
             $this->showConfirmDelete = false;
             $this->deleteId = null;
+            $this->initialSort();
             $this->notify('Business deleted successfully');
         } catch (\Exception $error) {
             dd($error);
@@ -116,7 +121,7 @@ class BusinessSettings extends Component
 
                 $this->showConfirmDeleteSelected = false;
                 $this->selected = [];
-
+                $this->initialSort();
                 $this->notify('Selected businesses deleted successfully');
             } catch (\Exception $error) {
                 dd($error);
@@ -143,7 +148,8 @@ class BusinessSettings extends Component
                 ? $this->editBusiness->update($data)
                 : Business::create($data);
             $this->reset();
-            $this->notify('Business added successfully');
+            $this->initialSort();
+            $this->notify('Business saved successfully');
         } catch (\Exception $error) {
             dd($error);
         }
