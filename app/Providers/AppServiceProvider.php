@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Routing\UrlGenerator;
 use Illuminate\Support\ServiceProvider;
 use Livewire\Component;
 
@@ -23,8 +24,11 @@ class AppServiceProvider extends ServiceProvider
      *
      * @return void
      */
+//    public function boot(UrlGenerator $url)
     public function boot()
     {
+//        $url->forceScheme('https');
+
         Builder::macro('search', function($field, $string) {
             return $string ? $this->where($field, 'like', '%'.$string.'%') : $this;
         });
