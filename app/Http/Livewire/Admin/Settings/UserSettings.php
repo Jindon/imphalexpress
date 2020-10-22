@@ -40,7 +40,7 @@ class UserSettings extends Component
 
     protected $rules = [
         'name' => 'required|max:125',
-        'phone' => 'sometimes|max:15',
+        'phone' => 'sometimes|regex:/^([0-9\s\-\+\(\)]*)$/|min:10|max:15',
         'email' => 'required|email|max:255|unique:users,email',
         'password' => 'required|min:6',
         'location_id' => 'required',

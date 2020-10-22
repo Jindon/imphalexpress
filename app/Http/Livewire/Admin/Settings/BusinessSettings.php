@@ -41,7 +41,7 @@ class BusinessSettings extends Component
 
     protected $rules = [
       'name' => 'required|max:125',
-      'phone' => 'sometimes|max:15',
+      'phone' => 'sometimes|regex:/^([0-9\s\-\+\(\)]*)$/|min:10|max:15',
       'location_id' => 'required',
       'status' => 'required|in:0,1',
       'address' => 'sometimes|max:250',

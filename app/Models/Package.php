@@ -43,4 +43,9 @@ class Package extends Model
     {
         return Carbon::make($date)->format('d/m/Y');
     }
+
+    public function humanDate($date)
+    {
+        return Carbon::make($date)->toFormattedDateString();
+    }
 }

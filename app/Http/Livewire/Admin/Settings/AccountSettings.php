@@ -19,7 +19,7 @@ class AccountSettings extends Component
 
     protected function rules() { return [
         'name' => 'required|max:125',
-        'phone' => 'sometimes|max:13',
+        'phone' => 'sometimes|regex:/^([0-9\s\-\+\(\)]*)$/|min:10|max:15',
         'email' => 'required|email|unique:users,email,' . auth()->user()->id,
     ]; }
 

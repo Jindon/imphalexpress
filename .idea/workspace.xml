@@ -2,19 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dd1ec14b-fd79-4e3c-b062-204d4a645b9d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/components/input/password.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Website/HomeController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Website/TrackerController.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Livewire/Admin/ManagePackages.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Admin/ManagePackages.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/Admin/Settings/AccountSettings.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Admin/Settings/AccountSettings.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Livewire/Admin/Settings/BusinessSettings.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Admin/Settings/BusinessSettings.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/Admin/Settings/GeneralSettings.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Admin/Settings/GeneralSettings.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Livewire/Admin/Settings/UserSettings.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Admin/Settings/UserSettings.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/UserFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/UserFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/components/icon.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/icon.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/components/table.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/table.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/livewire/admin/manage-packages.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/admin/manage-packages.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/livewire/admin/settings/user.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/admin/settings/user.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Feature/BusinessSettingsTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/BusinessSettingsTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Package.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Package.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/components/tracking-status.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/tracking-status.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/website/home.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/website/track.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -235,7 +235,7 @@
       <workItem from="1603083741828" duration="37703000" />
       <workItem from="1603174807987" duration="4555000" />
       <workItem from="1603293019936" duration="9324000" />
-      <workItem from="1603345750652" duration="35336000" />
+      <workItem from="1603345750652" duration="41754000" />
     </task>
     <servers />
   </component>
@@ -271,22 +271,22 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="549" y="172" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1603114085491" />
-    <state width="1493" height="252" key="GridCell.Tab.0.bottom" timestamp="1603388001901">
+    <state width="1493" height="252" key="GridCell.Tab.0.bottom" timestamp="1603388056248">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="252" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1603388001901" />
-    <state width="1493" height="252" key="GridCell.Tab.0.center" timestamp="1603388001901">
+    <state width="1493" height="252" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1603388056248" />
+    <state width="1493" height="252" key="GridCell.Tab.0.center" timestamp="1603388056248">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="252" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1603388001901" />
-    <state width="1493" height="252" key="GridCell.Tab.0.left" timestamp="1603388001901">
+    <state width="1493" height="252" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1603388056248" />
+    <state width="1493" height="252" key="GridCell.Tab.0.left" timestamp="1603388056248">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="252" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1603388001901" />
-    <state width="1493" height="252" key="GridCell.Tab.0.right" timestamp="1603388001901">
+    <state width="1493" height="252" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1603388056248" />
+    <state width="1493" height="252" key="GridCell.Tab.0.right" timestamp="1603388056248">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="252" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1603388001901" />
+    <state width="1493" height="252" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1603388056248" />
     <state x="604" y="342" key="NewPhpFileDialog" timestamp="1602585591451">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -307,9 +307,9 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="425" y="189" key="run.anything.popup/0.0.1536.834@0.0.1536.834" timestamp="1603387177260" />
-    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1603387249584">
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1603394457741">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1603387249584" />
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1603394457741" />
   </component>
 </project>

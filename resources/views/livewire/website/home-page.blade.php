@@ -1,4 +1,4 @@
-<x-app-layout>
+<div>
     <div class="flex flex-col md:flex-row justify-between items-end md:space-x-24 space-y-12 md:space-y-0">
         <div class="w-full md:w-3/5">
             <div class="w-full md:w-64 h-auto">
@@ -65,24 +65,30 @@
         </div>
         <div class="w-full md:w-2/5">
             <p class="text-gray-600 mb-2">Request a callback from us</p>
-            <div class="space-y-4">
-                <div class="relative flex">
-                    <div class="absolute left-0 top-0 px-2 py-3 text-gray-400">
-                        <svg class="w-4 h-auto fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 15"><path d="M8 0a1 1 0 00-1 1v1a1 1 0 002 0V1a1 1 0 00-1-1zM2 2h3a3 3 0 106 0h3a2 2 0 012 2v9a2 2 0 01-2 2H2a2 2 0 01-2-2V4a2 2 0 012-2zm2.5 7A1.5 1.5 0 103 7.5 1.5 1.5 0 004.5 9zm2.45 4a2.5 2.5 0 10-4.9 0zM10 7a1 1 0 000 2h3a1 1 0 000-2zm-1 4a1 1 0 011-1h2a1 1 0 010 2h-2a1 1 0 01-1-1z"/></svg>
+            <form wire:submit.prevent="saveMessage">
+                <div class="space-y-4" wire:loading.class="opacity-50" wire:target="saveMessage">
+                    <x-input.group class="w-full" :error="$errors->first('name')">
+                        <div class="relative flex">
+                            <div class="absolute left-0 top-0 px-2 py-3 text-gray-400">
+                                <svg class="w-4 h-auto fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 15"><path d="M8 0a1 1 0 00-1 1v1a1 1 0 002 0V1a1 1 0 00-1-1zM2 2h3a3 3 0 106 0h3a2 2 0 012 2v9a2 2 0 01-2 2H2a2 2 0 01-2-2V4a2 2 0 012-2zm2.5 7A1.5 1.5 0 103 7.5 1.5 1.5 0 004.5 9zm2.45 4a2.5 2.5 0 10-4.9 0zM10 7a1 1 0 000 2h3a1 1 0 000-2zm-1 4a1 1 0 011-1h2a1 1 0 010 2h-2a1 1 0 01-1-1z"/></svg>
+                            </div>
+                            <input wire:model="name" class="p-2 pl-8 w-full focus:outline-none rounded border border-gray-300 bg-gray-100 text-lg placeholder-gray-400" type="text" placeholder="Enter name / business name">
+                        </div>
+                    </x-input.group>
+                    <div class="relative flex">
+                        <x-input.group class="w-full" :error="$errors->first('phone')">
+                            <div class="absolute left-0 top-0 px-2 py-3 text-gray-400">
+                                <svg class="w-4 h-auto fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M0 1.25A1.25 1.25 0 011.25 0h2.691a1.25 1.25 0 011.233 1.045L6.1 6.589a1.25 1.25 0 01-.675 1.325L3.49 8.88a13.8 13.8 0 007.631 7.631l.967-1.935a1.25 1.25 0 011.324-.675l5.544.925A1.25 1.25 0 0120 16.059v2.691A1.25 1.25 0 0118.75 20h-2.5A16.25 16.25 0 010 3.75z" /></svg>
+                            </div>
+                            <input wire:model="phone" class="p-2 pl-8 w-full focus:outline-none rounded border border-gray-300 bg-gray-100 text-lg placeholder-gray-400" type="text" placeholder="Enter phone number">
+                        </x-input.group>
                     </div>
-                    <input class="p-2 pl-8 w-full rounded border border-gray-300 bg-gray-100 text-lg placeholder-gray-400" type="text" placeholder="Enter name / business name">
-                </div>
-                <div class="relative flex">
-                    <div class="absolute left-0 top-0 px-2 py-3 text-gray-400">
-                        <svg class="w-4 h-auto fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M0 1.25A1.25 1.25 0 011.25 0h2.691a1.25 1.25 0 011.233 1.045L6.1 6.589a1.25 1.25 0 01-.675 1.325L3.49 8.88a13.8 13.8 0 007.631 7.631l.967-1.935a1.25 1.25 0 011.324-.675l5.544.925A1.25 1.25 0 0120 16.059v2.691A1.25 1.25 0 0118.75 20h-2.5A16.25 16.25 0 010 3.75z" /></svg>
-                    </div>
-                    <input class="p-2 pl-8 w-full rounded border border-gray-300 bg-gray-100 text-lg placeholder-gray-400" type="text" placeholder="Enter phone number">
-                </div>
 
-                <x-input.textarea placeholder="Input message (if any)" rows="4"></x-input.textarea>
+                    <x-input.textarea wire:model="message" placeholder="Input message (if any)" rows="4"></x-input.textarea>
 
-                <button class="p-4 w-full rounded bg-orange-600 text-gray-100 font-bold transition duration-200 hover:bg-orange-700">Request callback</button>
-            </div>
+                    <button class="p-4 w-full focus:outline-none rounded bg-orange-600 text-gray-100 font-bold transition duration-200 hover:bg-orange-700">Request callback</button>
+                </div>
+            </form>
         </div>
     </div>
-</x-app-layout>
+</div>

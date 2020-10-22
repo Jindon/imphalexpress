@@ -1,13 +1,12 @@
 <?php
 
-use App\Http\Controllers\Admin\PackagesController;
-use App\Http\Controllers\Website\HomeController;
-use App\Http\Controllers\Website\TrackerController;
 use App\Http\Livewire\Admin\ManagePackages;
 use App\Http\Livewire\Admin\Settings\AccountSettings;
 use App\Http\Livewire\Admin\Settings\BusinessSettings;
 use App\Http\Livewire\Admin\Settings\GeneralSettings;
 use App\Http\Livewire\Admin\Settings\UserSettings;
+use App\Http\Livewire\Website\HomePage;
+use App\Http\Livewire\Website\TrackPackage;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,8 +19,8 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', HomeController::class)->name('home');
-Route::get('/track', TrackerController::class)->name('track');
+Route::get('/', HomePage::class)->name('home');
+Route::get('/track', TrackPackage::class)->name('track');
 
 Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/admin/packages', ManagePackages::class)

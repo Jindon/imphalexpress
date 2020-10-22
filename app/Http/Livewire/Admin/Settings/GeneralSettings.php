@@ -16,7 +16,7 @@ class GeneralSettings extends Component
 
     protected $rules = [
         'siteName' => 'required|min:6',
-        'contactNumber' => 'required|numeric|min:10',
+        'contactNumber' => 'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10|max:15',
         'callbackEmail' => 'required|email',
     ];
 
