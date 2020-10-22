@@ -45,9 +45,13 @@ class ManagePackages extends Component
     public $filters = [
         'search' => '',
         'status' => null,
-        'addedOnMax' => null,
-        'addedOnMin' => null,
-        'locationId' => null,
+        'collectedMinDate' => null,
+        'collectedMaxDate' => null,
+        'business' => null,
+        'deliverByMinDate' => null,
+        'deliverByMaxDate' => null,
+        'businessLocation' => null,
+        'deliveryLocation' => null,
     ];
 
     protected $listeners = ['refreshPackages' => '$refresh'];
@@ -125,17 +129,22 @@ class ManagePackages extends Component
     public function changeStatus()
     {
         $this->authorize('package', $this->editPackage);
-        $this->editPackage->update([
-            'status' => $this->changeStatus,
-            'collected_on' => $this->collected_on ? Carbon::createFromFormat('d/m/Y', $this->collected_on) : null,
-            'deliver_by' => $this->deliver_by ? Carbon::createFromFormat('d/m/Y', $this->deliver_by) : null,
-            'reached_location_on' => $this->reached_location_on ? Carbon::createFromFormat('d/m/Y', $this->reached_location_on) : null,
-            'out_for_delivery_on' => $this->out_for_delivery_on ? Carbon::createFromFormat('d/m/Y', $this->out_for_delivery_on) : null,
-            'delivered_on' => $this->delivered_on ? Carbon::createFromFormat('d/m/Y', $this->delivered_on) : null,
-        ]);
-        $this->reset();
-        $this->initialSort();
-        $this->notify('Package status updated successfully');
+        try {
+            $this->editPackage->update([
+                'status' => $this->changeStatus,
+                'collected_on' => $this->collected_on ? Carbon::createFromFormat('d/m/Y', $this->collected_on) : null,
+                'deliver_by' => $this->deliver_by ? Carbon::createFromFormat('d/m/Y', $this->deliver_by) : null,
+                'reached_location_on' => $this->reached_location_on ? Carbon::createFromFormat('d/m/Y', $this->reached_location_on) : null,
+                'out_for_delivery_on' => $this->out_for_delivery_on ? Carbon::createFromFormat('d/m/Y', $this->out_for_delivery_on) : null,
+                'delivered_on' => $this->delivered_on ? Carbon::createFromFormat('d/m/Y', $this->delivered_on) : null,
+            ]);
+            $this->reset();
+            $this->initialSort();
+            $this->notify('Package status updated successfully');
+        } catch(\Exception $error) {
+            dd($error);
+        }
+
     }
 
     public function confirmDelete($package_id)
@@ -241,10 +250,18 @@ class ManagePackages extends Component
                         $subQuery->where('location_id', auth()->user()->location_id);
                     });
             })
-            ->when(in_array($this->filters['status'], ['0', '1']), fn($query) => $query->where('status', $this->filters['status']))
-            ->when($this->filters['locationId'], fn($query, $location_id) => $query->where('location_id', $location_id))
-            ->when($this->filters['addedOnMin'], fn($query, $addedOnMin) => $query->where('created_at', '>=', Carbon::createFromFormat('d/m/Y', $addedOnMin)))
-            ->when($this->filters['addedOnMax'], fn($query, $addedOnMax) => $query->where('created_at', '<=', Carbon::createFromFormat('d/m/Y', $addedOnMax)))
+            ->when(in_array($this->filters['status'], array_keys(Package::STATUSES)), fn($query) => $query->where('status', $this->filters['status']))
+            ->when($this->filters['collectedMinDate'], fn($query, $collectedMinDate) => $query->where('collected_on', '>=', Carbon::createFromFormat('d/m/Y', $collectedMinDate)))
+            ->when($this->filters['collectedMaxDate'], fn($query, $collectedMaxDate) => $query->where('collected_on', '<=', Carbon::createFromFormat('d/m/Y', $collectedMaxDate)))
+            ->when($this->filters['business'], fn($query, $business_id) => $query->where('business_id', $business_id))
+            ->when($this->filters['deliverByMinDate'], fn($query, $deliverByMinDate) => $query->where('deliver_by', '>=', Carbon::createFromFormat('d/m/Y', $deliverByMinDate)))
+            ->when($this->filters['deliverByMaxDate'], fn($query, $deliverByMaxDate) => $query->where('deliver_by', '<=', Carbon::createFromFormat('d/m/Y', $deliverByMaxDate)))
+            ->when($this->filters['businessLocation'], function($query, $businessLocation) {
+                $query->whereHas('business', function($subQuery) use($businessLocation) {
+                    $subQuery->where('location_id', $businessLocation);
+                });
+            })
+            ->when($this->filters['deliveryLocation'], fn($query, $deliveryLocation) => $query->where('location_id', $deliveryLocation))
             ->when($this->filters['search'], fn($query, $search) => $query->where('tracking_id', 'like', '%'.$search.'%'));
         return $this->applySorting($query);
     }

@@ -2,28 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dd1ec14b-fd79-4e3c-b062-204d4a645b9d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/components/button/link.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/components/tracking-status.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/PackagesController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/Admin/Settings/ImportBusinesses.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Admin/Settings/ImportBusinesses.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/DataTable/WithBulkActions.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/DataTable/WithBulkActions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/Admin/ManagePackages.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Admin/ManagePackages.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/auth.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/BusinessFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/BusinessFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/LocationFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/LocationFactory.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/factories/UserFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/UserFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/packages.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/components/badge.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/badge.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/components/button/dropdown.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/button/dropdown.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/components/input/select.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/input/select.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/components/notification.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/notification.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/livewire/admin/settings/business.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/admin/settings/business.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/livewire/admin/settings/import-businesses.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/admin/settings/import-businesses.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/livewire/admin/manage-packages.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/admin/manage-packages.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/website/track.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/website/track.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -190,25 +174,25 @@
       <recent name="C:\laragon\www\imphalexpress\app\Http\Controllers\Admin\Settings" />
     </key>
   </component>
-  <component name="RunManager" selected="PHPUnit.phpunit.xml">
-    <configuration name="BusinessSettingsTest.admin_cannot_change_business_status" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Tests\Feature\BusinessSettingsTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/BusinessSettingsTest.php" method="admin_cannot_change_business_status" scope="Method" />
-      <method v="2" />
-    </configuration>
-    <configuration name="BusinessSettingsTest.admin_cannot_delete_business" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Tests\Feature\BusinessSettingsTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/BusinessSettingsTest.php" method="admin_cannot_delete_business" scope="Method" />
-      <method v="2" />
-    </configuration>
-    <configuration name="BusinessSettingsTest.admin_cannot_delete_selected_businesses" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Tests\Feature\BusinessSettingsTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/BusinessSettingsTest.php" method="admin_cannot_delete_selected_businesses" scope="Method" />
-      <method v="2" />
-    </configuration>
-    <configuration name="BusinessSettingsTest.superadmin_can_change_business_status" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Tests\Feature\BusinessSettingsTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/BusinessSettingsTest.php" method="superadmin_can_change_business_status" scope="Method" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="PHPUnit.PackageManagementTest.admin_can_delete_selected_package">
     <configuration name="BusinessSettingsTest.superadmin_can_delete_selected_businesses" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
       <TestRunner class="Tests\Feature\BusinessSettingsTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/BusinessSettingsTest.php" method="superadmin_can_delete_selected_businesses" scope="Method" />
+      <method v="2" />
+    </configuration>
+    <configuration name="PackageManagementTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Feature\PackageManagementTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/PackageManagementTest.php" scope="Class" />
+      <method v="2" />
+    </configuration>
+    <configuration name="PackageManagementTest.admin_can_change_package_status" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Feature\PackageManagementTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/PackageManagementTest.php" method="admin_can_change_package_status" scope="Method" />
+      <method v="2" />
+    </configuration>
+    <configuration name="PackageManagementTest.admin_can_delete_package" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Feature\PackageManagementTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/PackageManagementTest.php" method="admin_can_delete_package" scope="Method" />
+      <method v="2" />
+    </configuration>
+    <configuration name="PackageManagementTest.admin_can_delete_selected_package" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Feature\PackageManagementTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/PackageManagementTest.php" method="admin_can_delete_selected_package" scope="Method" />
       <method v="2" />
     </configuration>
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -217,11 +201,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="PHPUnit.BusinessSettingsTest.superadmin_can_change_business_status" />
-        <item itemvalue="PHPUnit.BusinessSettingsTest.admin_cannot_change_business_status" />
-        <item itemvalue="PHPUnit.BusinessSettingsTest.admin_cannot_delete_selected_businesses" />
+        <item itemvalue="PHPUnit.PackageManagementTest.admin_can_delete_selected_package" />
         <item itemvalue="PHPUnit.BusinessSettingsTest.superadmin_can_delete_selected_businesses" />
-        <item itemvalue="PHPUnit.BusinessSettingsTest.admin_cannot_delete_business" />
+        <item itemvalue="PHPUnit.PackageManagementTest" />
+        <item itemvalue="PHPUnit.PackageManagementTest.admin_can_delete_package" />
+        <item itemvalue="PHPUnit.PackageManagementTest.admin_can_change_package_status" />
       </list>
     </recent_temporary>
   </component>
@@ -244,7 +228,7 @@
       <workItem from="1603083741828" duration="37703000" />
       <workItem from="1603174807987" duration="4555000" />
       <workItem from="1603293019936" duration="9324000" />
-      <workItem from="1603345750652" duration="17984000" />
+      <workItem from="1603345750652" duration="25265000" />
     </task>
     <servers />
   </component>
@@ -268,10 +252,10 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="488" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.834@0.0.1536.834" timestamp="1603085848223" />
-    <state x="499" y="172" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1603364140003">
+    <state x="499" y="172" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1603368059779">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="499" y="172" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.834@0.0.1536.834" timestamp="1603364140003" />
+    <state x="499" y="172" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.834@0.0.1536.834" timestamp="1603368059779" />
     <state x="532" y="328" width="472" height="282" key="ComposerInitDialogKey" timestamp="1602767892942">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -280,22 +264,22 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="549" y="172" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1603114085491" />
-    <state width="1493" height="310" key="GridCell.Tab.0.bottom" timestamp="1603238184081">
+    <state width="1493" height="208" key="GridCell.Tab.0.bottom" timestamp="1603373980549">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="310" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1603238184081" />
-    <state width="1493" height="310" key="GridCell.Tab.0.center" timestamp="1603238184081">
+    <state width="1493" height="208" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1603373980549" />
+    <state width="1493" height="208" key="GridCell.Tab.0.center" timestamp="1603373980549">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="310" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1603238184081" />
-    <state width="1493" height="310" key="GridCell.Tab.0.left" timestamp="1603238184081">
+    <state width="1493" height="208" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1603373980549" />
+    <state width="1493" height="208" key="GridCell.Tab.0.left" timestamp="1603373980549">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="310" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1603238184081" />
-    <state width="1493" height="310" key="GridCell.Tab.0.right" timestamp="1603238184081">
+    <state width="1493" height="208" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1603373980549" />
+    <state width="1493" height="208" key="GridCell.Tab.0.right" timestamp="1603373980549">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="310" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1603238184081" />
+    <state width="1493" height="208" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1603373980549" />
     <state x="604" y="342" key="NewPhpFileDialog" timestamp="1602585591451">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -312,9 +296,9 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="480" y="0" width="576" height="834" key="find.popup/0.0.1536.834@0.0.1536.834" timestamp="1602768444307" />
-    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1603367558898">
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1603374004074">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1603367558898" />
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1603374004074" />
   </component>
 </project>

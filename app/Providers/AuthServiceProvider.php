@@ -36,10 +36,8 @@ class AuthServiceProvider extends ServiceProvider
         });
 
         Gate::define('package', function ($user, Package $package) {
-            $allow = $user->isSuperadmin
-                ? true
-                : $package->location_id === $user->location_id;
-            return $allow;
+            if($user->isSuperadmin) return true;
+            return $package->location_id == $user->location_id || $package->business->location_id == $user->location_id;
         });
 
         //

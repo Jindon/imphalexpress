@@ -24,6 +24,7 @@ class UserFactory extends Factory
     public function definition()
     {
         return [
+            'location_id' => null,
             'name' => $this->faker->name,
             'email' => 'jindon27@gmail.com',
             'phone' => $this->faker->numberBetween(1000000000, 9999999999),

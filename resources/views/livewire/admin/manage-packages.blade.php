@@ -50,59 +50,68 @@
         <div class="bg-gray-100 border border-gray-300 rounded p-4">
             <div class="flex justify-between items-center">
                 <p class="text-orange-600">Advanced search</p>
-                <button class="text-red-400 transition delay-200 hover:text-red-600">Clear filter</button>
+                <button wire:click="resetFilters" class="text-red-400 transition delay-200 hover:text-red-600 focus:outline-none">Clear filter</button>
             </div>
             <div class="grid grids-cols-2 md:grid-cols-3 gap-2 mt-4">
                 <div>
-                    <label class="text-sm text-gray-600">Status</label>
-                    <x-select input-name="status" initial-value="all">
-                        <option class="px-2 py-1 pointer cursor-pointer text-sm hover:bg-gray-100" value="all">All status</option>
-                        <option class="px-2 py-1 pointer cursor-pointer text-sm hover:bg-gray-100" value="dispatched">Dispatched</option>
-                        <option class="px-2 py-1 pointer cursor-pointer text-sm hover:bg-gray-100" value="delivered">Delivered</option>
-                        <option class="px-2 py-1 pointer cursor-pointer text-sm hover:bg-gray-100" value="processing">Processing</option>
-                        <option class="px-2 py-1 pointer cursor-pointer text-sm hover:bg-gray-100" value="delayed">Delayed</option>
-                    </x-select>
+                    <x-input.group label="Status" for="status">
+                        <x-input.select wire:model="filters.status" id="status">
+                            <option class="px-2 py-1 pointer cursor-pointer text-sm hover:bg-gray-100" value="">All status</option>
+                            @foreach(\App\Models\Package::STATUSES as $key => $status)
+                            <option value="{{ $key }}">{{ $status }}</option>
+                            @endforeach
+                        </x-input.select>
+                    </x-input.group>
                 </div>
                 <div>
-                    <label class="text-sm text-gray-600">Collected on min date</label>
-                    <x-date-picker id="collectedMinDate" name="collected_min_date"/>
-                    {{-- <x-date-picker value="{{now()->format('d/m/Y')}}" id="date"/>--}}
+                    <x-input.group label="Collected on min date" for="collectedMinDate">
+                        <x-input.date wire:model="filters.collectedMinDate" id="collectedMinDate"/>
+                    </x-input.group>
                 </div>
                 <div>
-                    <label class="text-sm text-gray-600">Collected on max date</label>
-                    <x-date-picker id="collectedMaxDate" name="collected_max_date"/>
+                    <x-input.group label="Collected on max date" for="collectedMaxDate">
+                        <x-input.date wire:model="filters.collectedMaxDate" id="collectedMaxDate"/>
+                    </x-input.group>
                 </div>
                 <div>
-                    <label class="text-sm text-gray-600">Business</label>
-                    <x-select input-name="business" initial-value="0">
-                        <option class="px-2 py-1 pointer cursor-pointer text-sm hover:bg-gray-100" value="0">All businesses</option>
-                        <option class="px-2 py-1 pointer cursor-pointer text-sm hover:bg-gray-100" value="1">Yumnam Variety store</option>
-                        <option class="px-2 py-1 pointer cursor-pointer text-sm hover:bg-gray-100" value="2">Dasys Flowers</option>
-                    </x-select>
+                    <x-input.group label="Business" for="business">
+                        <x-input.select wire:model="filters.business" id="business">
+                            <option value="">All businesses</option>
+                            @foreach($businesses as $key => $business)
+                                <option value="{{ $key }}">{{ $business->name }}</option>
+                            @endforeach
+                        </x-input.select>
+                    </x-input.group>
                 </div>
                 <div>
-                    <label class="text-sm text-gray-600">Deliver by min date</label>
-                    <x-date-picker id="deliverMinDate" name="deliver_min_date"/>
+                    <x-input.group label="Deliver by min date" for="deliverByMinDate">
+                        <x-input.date wire:model="filters.deliverByMinDate" id="deliverByMinDate"/>
+                    </x-input.group>
                 </div>
                 <div>
-                    <label class="text-sm text-gray-600">Deliver by max date</label>
-                    <x-date-picker id="deliverMaxDate" name="deliver_max_date"/>
+                    <x-input.group label="Deliver by max date" for="deliverByMaxDate">
+                        <x-input.date wire:model="filters.deliverByMaxDate" id="deliverByMaxDate"/>
+                    </x-input.group>
                 </div>
                 <div>
-                    <label class="text-sm text-gray-600">Business Location</label>
-                    <x-select input-name="business_location" initial-value="all">
-                        <option class="px-2 py-1 pointer cursor-pointer text-sm hover:bg-gray-100" value="all">All locations</option>
-                        <option class="px-2 py-1 pointer cursor-pointer text-sm hover:bg-gray-100" value="imphal-west">Imphal West</option>
-                        <option class="px-2 py-1 pointer cursor-pointer text-sm hover:bg-gray-100" value="imphal-east">Imphal East</option>
-                    </x-select>
+                    <x-input.group label="Business Location" for="businessLocation">
+                        <x-input.select wire:model="filters.businessLocation" id="businessLocation">
+                            <option value="">All locations</option>
+                            @foreach($locations as $location)
+                                <option value="{{ $location->id }}">{{ $location->name }}</option>
+                            @endforeach
+                        </x-input.select>
+                    </x-input.group>
                 </div>
                 <div>
-                    <label class="text-sm text-gray-600">Delivery Location</label>
-                    <x-select input-name="delivery_location" initial-value="all">
-                        <option class="px-2 py-1 pointer cursor-pointer text-sm hover:bg-gray-100" value="all">All locations</option>
-                        <option class="px-2 py-1 pointer cursor-pointer text-sm hover:bg-gray-100" value="imphal-west">Imphal West</option>
-                        <option class="px-2 py-1 pointer cursor-pointer text-sm hover:bg-gray-100" value="imphal-east">Imphal East</option>
-                    </x-select>
+                    <x-input.group label="Delivery Location" for="deliveryLocation">
+                        <x-input.select wire:model="filters.deliveryLocation" id="deliveryLocation">
+                            <option value="">All businesses</option>
+                            @foreach($locations as $location)
+                                <option value="{{ $location->id }}">{{ $location->name }}</option>
+                            @endforeach
+                        </x-input.select>
+                    </x-input.group>
                 </div>
             </div>
         </div>

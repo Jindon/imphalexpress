@@ -13,11 +13,12 @@
         </div>
 
         <div class="mt-4 md:mt-6">
-            <p class="text-gray-600">Package details</p>
             @if(true)
-                <div class="flex flex-col md:flex-row mt-2 md:mt-4 space-y-4 md:space-x-4">
-                    <table class="table-fixed w-3/5">
-                        <tbody>
+                <div class="flex flex-col md:flex-row mt-2 md:mt-4 space-y-4 md:space-x-4 items-end">
+                    <div class="w-3/5">
+                        <p class="text-gray-600 mb-2">Package details</p>
+                        <table class="table-fixed w-full">
+                            <tbody>
                             <tr>
                                 <td class="border px-4 py-4 w-1/2">Tracking ID</td>
                                 <td class="border px-4 py-4 w-1/2">IEX00125487</td>
@@ -34,8 +35,9 @@
                                 <td class="border px-4 py-4">Expected delivery</td>
                                 <td class="border px-4 py-4">14/10/2020</td>
                             </tr>
-                        </tbody>
-                    </table>
+                            </tbody>
+                        </table>
+                    </div>
 
                     <div class="w-2/5 flex items-start md:items-end justify-start md:justify-end">
                         <x-tracking-status />
