@@ -5,7 +5,7 @@
 <div class="relative w-full" x-data="{ open: false }" @click.away="open = false">
     <x-button
         @click="open = !open"
-        class="w-{{ $width }} flex justify-between items-center border border-gray-300 bg-white hover:bg-white rounded p-2 bg-gray-100"
+        class="w-{{ $width }} flex justify-between items-center leading-tight border border-gray-300 bg-white hover:bg-white rounded p-2 bg-gray-100"
         icon="selector" icon-width="2"
     >
         {{ $trigger }}

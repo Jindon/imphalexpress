@@ -2,8 +2,10 @@
 
 namespace App\Providers;
 
+use App\Models\Package;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Gate;
+use function React\Promise\all;
 
 class AuthServiceProvider extends ServiceProvider
 {
@@ -31,6 +33,13 @@ class AuthServiceProvider extends ServiceProvider
 
         Gate::define('account', function ($user) {
             return $user->isSuperadmin || $user->isAdmin;
+        });
+
+        Gate::define('package', function ($user, Package $package) {
+            $allow = $user->isSuperadmin
+                ? true
+                : $package->location_id === $user->location_id;
+            return $allow;
         });
 
         //

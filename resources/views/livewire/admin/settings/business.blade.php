@@ -121,7 +121,7 @@
                             <x-table.cell class="text-sm">{{ $business->phone }}</x-table.cell>
                             <x-table.cell class="text-sm">{{ $business->created_at_formatted }}</x-table.cell>
                             <x-table.cell class="text-sm">
-                                <x-badge :type="$business->status ? 'green' : 'red'">{{ $business->getStatus() }}</x-badge>
+                                <x-badge :color="$business->status ? 'green' : 'red'">{{ $business->getStatus() }}</x-badge>
                             </x-table.cell>
                             <x-table.cell class="text-sm">
                                 <x-button.group class="justify-end">
@@ -156,7 +156,7 @@
 
     </div>
 
-    <!-- Business from modal -->
+    <!-- Business form modal -->
     <x-modal wire:model="showForm">
         <div class="p-4 flex justify-between items-center">
             <x-title title="Add business" title-size="text-lg md:text-xl"></x-title>

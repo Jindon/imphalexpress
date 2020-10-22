@@ -22,7 +22,7 @@ class BusinessFactory extends Factory
     public function definition()
     {
         return [
-            'location_id' => $this->faker->randomElement([6,7,9]),
+            'location_id' => $this->faker->randomElement([1,2,3,4,5]),
             'name' => $this->faker->name,
             'phone' => $this->faker->numberBetween(1000000000, 9999999999),
             'address' => $this->faker->address,

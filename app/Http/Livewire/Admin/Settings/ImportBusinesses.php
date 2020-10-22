@@ -74,7 +74,7 @@ class ImportBusinesses extends Component
 
         $this->emit('refreshBusinesses');
 
-        $this->notify('Imported '.$importCount.' transactions!');
+        $this->notify('Imported '.$importCount.' businesses!');
     }
 
     public function extractFieldsFromRow($row)

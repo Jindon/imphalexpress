@@ -9,7 +9,7 @@
 
         <select
             {{ $attributes }}
-            class="w-full border border-gray-300 bg-gray-100 leading-tight rounded p-3 appearance-none focus:outline-none focus:bg-white focus:border-gray-400 capitalize"
+            class="w-full border border-gray-300 bg-gray-100 leading-none rounded p-3 appearance-none focus:outline-none focus:bg-white focus:border-gray-400 capitalize"
         >
             {{ $slot }}
         </select>

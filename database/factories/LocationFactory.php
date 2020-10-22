@@ -22,7 +22,7 @@ class LocationFactory extends Factory
      */
     public function definition()
     {
-        $name = $this->faker->name;
+        $name = $this->faker->word;
         return [
             'name' => $name,
             'identifier' => Str::kebab($name),

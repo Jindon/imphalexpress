@@ -25,8 +25,8 @@ class UserFactory extends Factory
     {
         return [
             'name' => $this->faker->name,
-            'email' => $this->faker->unique()->safeEmail,
-            'phone' => $this->faker->phoneNumber,
+            'email' => 'jindon27@gmail.com',
+            'phone' => $this->faker->numberBetween(1000000000, 9999999999),
             'email_verified_at' => now(),
             'password' => Hash::make('welcome27'),
             'status' => true,

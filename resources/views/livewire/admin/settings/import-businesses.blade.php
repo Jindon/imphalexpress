@@ -1,5 +1,5 @@
 <div>
-    <x-button.default class="py-4" wire:click="$toggle('showModal')">Import</x-button.default>
+    <x-button.default class="py-3 leading-tight" wire:click="$toggle('showModal')">Import</x-button.default>
 
     <!-- Import businesses modal -->
     <x-modal wire:model="showModal">
@@ -11,6 +11,7 @@
         </div>
         @unless($upload)
             <div class="p-4">
+                @json($errors->first())
                 <div class="flex flex-col space-y-4 justify-center items-center py-10">
                     <p class="text-gray-600 text-center">Select a CSV file to upload</p>
                     <x-input.group class="flex flex-col items-center space-y-4" :error="$errors->first('upload')">

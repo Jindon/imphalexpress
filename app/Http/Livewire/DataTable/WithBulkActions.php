@@ -37,6 +37,11 @@ trait WithBulkActions
         $this->selectAll = true;
     }
 
+    public function resetSelected()
+    {
+        $this->selected = [];
+    }
+
     public function getSelectedRowsQueryProperty()
     {
         return (clone $this->rowsQuery)

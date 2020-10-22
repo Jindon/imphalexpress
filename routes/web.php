@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\PackagesController;
 use App\Http\Controllers\Website\HomeController;
 use App\Http\Controllers\Website\TrackerController;
+use App\Http\Livewire\Admin\ManagePackages;
 use App\Http\Livewire\Admin\Settings\AccountSettings;
 use App\Http\Livewire\Admin\Settings\BusinessSettings;
 use App\Http\Livewire\Admin\Settings\GeneralSettings;
@@ -23,7 +24,7 @@ Route::get('/', HomeController::class)->name('home');
 Route::get('/track', TrackerController::class)->name('track');
 
 Route::middleware(['auth', 'admin'])->group(function () {
-    Route::get('/admin/packages', PackagesController::class)
+    Route::get('/admin/packages', ManagePackages::class)
         ->name('admin.packages');
 });
 
