@@ -44,7 +44,7 @@ class LocationSettings extends Component
             ? $this->editLocation->update($data)
             : Location::create($data);
 
-        $this->showForm = false;
+        $this->reset();
 
         $message = isset($this->editLocation)
             ? 'Location updated successfully!'

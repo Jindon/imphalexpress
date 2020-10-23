@@ -110,7 +110,7 @@
     <!-- Business form modal -->
     <x-modal wire:model="showForm">
         <div class="p-4 flex justify-between items-center">
-            <x-title title="Add business" title-size="text-lg md:text-xl"></x-title>
+            <x-title title="Save user" title-size="text-lg md:text-xl"></x-title>
             <div>
                 <x-button.icon.close icon-width="3" class="p-2" wire:click="toggleShowForm"></x-button.icon.close>
             </div>
@@ -165,7 +165,7 @@
         <div class="p-4 bg-gray-100">
             <div class="flex md:justify-end items-center space-x-2">
                 <x-button.default wire:click="toggleShowForm">Nevermind</x-button.default>
-                <x-button.dark wire:click="save">Save business</x-button.dark>
+                <x-button.dark wire:click="save">Save user</x-button.dark>
             </div>
         </div>
     </x-modal>
@@ -192,13 +192,13 @@
     <!-- Confirm delete selected businesses modal -->
     <x-modal wire:model.defer="showConfirmDeleteSelected" max-width="md">
         <div class="p-4 flex justify-between items-center">
-            <x-title title="Delete selected businesses" title-size="text-lg md:text-xl"></x-title>
+            <x-title title="Delete selected users" title-size="text-lg md:text-xl"></x-title>
             <div>
                 <x-button.icon.close icon-width="3" class="p-2" wire:click="$set('showConfirmDeleteSelected', false)"></x-button.icon.close>
             </div>
         </div>
         <div class="p-4">
-            Are you sure you want to delete the selected businesses? This action is not irreversible.
+            Are you sure you want to delete the selected users? This action is not irreversible.
         </div>
         <div class="p-4 bg-gray-100">
             <div class="flex md:justify-end items-center space-x-2">
