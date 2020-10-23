@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dd1ec14b-fd79-4e3c-b062-204d4a645b9d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Helpers/settings-helper.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/imphalexpress.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/imphalexpress.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/components/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/header.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -154,7 +152,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/components/input" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.editor" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -228,7 +226,7 @@
       <workItem from="1603174807987" duration="4555000" />
       <workItem from="1603293019936" duration="9324000" />
       <workItem from="1603345750652" duration="42838000" />
-      <workItem from="1603430418353" duration="2305000" />
+      <workItem from="1603430418353" duration="3130000" />
     </task>
     <servers />
   </component>
@@ -284,10 +282,10 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="604" y="342" key="NewPhpFileDialog/0.0.1536.834@0.0.1536.834" timestamp="1602585591451" />
-    <state x="142" y="34" width="1174" height="709" key="SettingsEditor" timestamp="1602781823141">
+    <state x="142" y="34" width="1174" height="709" key="SettingsEditor" timestamp="1603433309836">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="142" y="34" width="1174" height="709" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1602781823141" />
+    <state x="142" y="34" width="1174" height="709" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1603433309836" />
     <state x="490" y="159" width="540" height="540" key="StructurePopup" timestamp="1603359843159">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -300,9 +298,9 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="425" y="189" key="run.anything.popup/0.0.1536.834@0.0.1536.834" timestamp="1603387177260" />
-    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1603432228015">
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1603432881778">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1603432228015" />
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1603432881778" />
   </component>
 </project>
