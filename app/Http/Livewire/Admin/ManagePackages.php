@@ -61,7 +61,7 @@ class ManagePackages extends Component
         'location_id' => 'required',
         'tracking_id' => 'required|unique:packages,tracking_id,' . $this->editId,
         'delivery_address' => 'required|max:255',
-        'delivery_contact' => 'sometimes|regex:/^([0-9\s\-\+\(\)]*)$/|min:10|max:15',
+        'delivery_contact' => 'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10|max:15',
         'delivery_note' => 'sometimes|max:125',
         'collected_on' => 'required',
         'deliver_by' => 'required',
