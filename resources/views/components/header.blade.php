@@ -14,9 +14,9 @@
                 @auth
                     @if(auth()->user()->role == 'admin' || auth()->user()->role == 'superadmin')
                         <a class="font-bold {{ request()->is('admin/packages') ? 'text-orange-600' : 'text-gray-500' }}" href="{{ route('admin.packages') }}">{{ __('Packages') }}</a>
-                    @endif
-                    @if(auth()->user()->role == 'superadmin')
-                        <a class="font-bold {{ request()->is('settings*') ? 'text-orange-600' : 'text-gray-500' }}" href="/settings/general">{{ __('Settings') }}</a>
+                        <a class="font-bold {{ request()->is('settings*') ? 'text-orange-600' : 'text-gray-500' }}"
+                           href="{{ auth()->user()->role == 'superadmin' ? route('admin.settings.general') : route('admin.settings.account') }}"
+                        >{{ __('Settings') }}</a>
                     @endif
                     <a class="font-bold text-gray-500" href="{{ route('logout') }}"
                        onclick="event.preventDefault();document.getElementById('logout-form').submit();">{{ __('Logout') }}</a>
