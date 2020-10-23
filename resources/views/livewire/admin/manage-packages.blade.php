@@ -255,8 +255,8 @@
                         </x-input.group>
                     </div>
                     <div>
-                        <x-input.group type="text" label="Delivery contact" for="deliveryContact" :error="$errors->first('delivery_contact')">
-                            <x-input.text wire:model="delivery_contact" id="deliveryContact" icon="phone" placeholder="Enter delivery contact"></x-input.text>
+                        <x-input.group type="text" label="Delivery contact *" for="deliveryContact" :error="$errors->first('delivery_contact')">
+                            <x-input.text wire:model="delivery_contact" id="deliveryContact" icon="phone" placeholder="Enter delivery contact" required></x-input.text>
                         </x-input.group>
                     </div>
                     <div>

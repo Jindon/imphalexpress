@@ -190,7 +190,7 @@
                     </div>
                     <div>
                         <x-input.group type="text" label="Business phone" for="phone" :error="$errors->first('phone')">
-                            <x-input.text wire:model="phone" id="phone" icon="phone" placeholder="Enter business phone" required></x-input.text>
+                            <x-input.text wire:model="phone" id="phone" icon="phone" placeholder="Enter business phone"></x-input.text>
                         </x-input.group>
                     </div>
                     <div>
