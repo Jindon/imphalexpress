@@ -16,14 +16,17 @@
       <excludeFolder url="file://$MODULE_DIR$/storage/framework/cache/data/0f" />
       <excludeFolder url="file://$MODULE_DIR$/storage/framework/cache/data/10" />
       <excludeFolder url="file://$MODULE_DIR$/storage/framework/cache/data/13" />
+      <excludeFolder url="file://$MODULE_DIR$/storage/framework/cache/data/16" />
       <excludeFolder url="file://$MODULE_DIR$/storage/framework/cache/data/17" />
       <excludeFolder url="file://$MODULE_DIR$/storage/framework/cache/data/1a" />
       <excludeFolder url="file://$MODULE_DIR$/storage/framework/cache/data/21" />
       <excludeFolder url="file://$MODULE_DIR$/storage/framework/cache/data/27" />
+      <excludeFolder url="file://$MODULE_DIR$/storage/framework/cache/data/29" />
       <excludeFolder url="file://$MODULE_DIR$/storage/framework/cache/data/2b" />
       <excludeFolder url="file://$MODULE_DIR$/storage/framework/cache/data/2c" />
       <excludeFolder url="file://$MODULE_DIR$/storage/framework/cache/data/2d" />
       <excludeFolder url="file://$MODULE_DIR$/storage/framework/cache/data/2e" />
+      <excludeFolder url="file://$MODULE_DIR$/storage/framework/cache/data/2f" />
       <excludeFolder url="file://$MODULE_DIR$/storage/framework/cache/data/30" />
       <excludeFolder url="file://$MODULE_DIR$/storage/framework/cache/data/33" />
       <excludeFolder url="file://$MODULE_DIR$/storage/framework/cache/data/34" />
@@ -34,6 +37,7 @@
       <excludeFolder url="file://$MODULE_DIR$/storage/framework/cache/data/46" />
       <excludeFolder url="file://$MODULE_DIR$/storage/framework/cache/data/4b" />
       <excludeFolder url="file://$MODULE_DIR$/storage/framework/cache/data/4e" />
+      <excludeFolder url="file://$MODULE_DIR$/storage/framework/cache/data/56" />
       <excludeFolder url="file://$MODULE_DIR$/storage/framework/cache/data/57" />
       <excludeFolder url="file://$MODULE_DIR$/storage/framework/cache/data/58" />
       <excludeFolder url="file://$MODULE_DIR$/storage/framework/cache/data/5a" />
@@ -42,6 +46,7 @@
       <excludeFolder url="file://$MODULE_DIR$/storage/framework/cache/data/62" />
       <excludeFolder url="file://$MODULE_DIR$/storage/framework/cache/data/65" />
       <excludeFolder url="file://$MODULE_DIR$/storage/framework/cache/data/6e" />
+      <excludeFolder url="file://$MODULE_DIR$/storage/framework/cache/data/70" />
       <excludeFolder url="file://$MODULE_DIR$/storage/framework/cache/data/71" />
       <excludeFolder url="file://$MODULE_DIR$/storage/framework/cache/data/72" />
       <excludeFolder url="file://$MODULE_DIR$/storage/framework/cache/data/73" />
@@ -58,6 +63,7 @@
       <excludeFolder url="file://$MODULE_DIR$/storage/framework/cache/data/8d" />
       <excludeFolder url="file://$MODULE_DIR$/storage/framework/cache/data/8e" />
       <excludeFolder url="file://$MODULE_DIR$/storage/framework/cache/data/8f" />
+      <excludeFolder url="file://$MODULE_DIR$/storage/framework/cache/data/94" />
       <excludeFolder url="file://$MODULE_DIR$/storage/framework/cache/data/99" />
       <excludeFolder url="file://$MODULE_DIR$/storage/framework/cache/data/9b" />
       <excludeFolder url="file://$MODULE_DIR$/storage/framework/cache/data/9d" />
@@ -72,12 +78,15 @@
       <excludeFolder url="file://$MODULE_DIR$/storage/framework/cache/data/b5" />
       <excludeFolder url="file://$MODULE_DIR$/storage/framework/cache/data/b7" />
       <excludeFolder url="file://$MODULE_DIR$/storage/framework/cache/data/bb" />
+      <excludeFolder url="file://$MODULE_DIR$/storage/framework/cache/data/c0" />
       <excludeFolder url="file://$MODULE_DIR$/storage/framework/cache/data/c1" />
       <excludeFolder url="file://$MODULE_DIR$/storage/framework/cache/data/c4" />
       <excludeFolder url="file://$MODULE_DIR$/storage/framework/cache/data/cc" />
       <excludeFolder url="file://$MODULE_DIR$/storage/framework/cache/data/cf" />
       <excludeFolder url="file://$MODULE_DIR$/storage/framework/cache/data/d2" />
+      <excludeFolder url="file://$MODULE_DIR$/storage/framework/cache/data/d3" />
       <excludeFolder url="file://$MODULE_DIR$/storage/framework/cache/data/d4" />
+      <excludeFolder url="file://$MODULE_DIR$/storage/framework/cache/data/d5" />
       <excludeFolder url="file://$MODULE_DIR$/storage/framework/cache/data/e3" />
       <excludeFolder url="file://$MODULE_DIR$/storage/framework/cache/data/e6" />
       <excludeFolder url="file://$MODULE_DIR$/storage/framework/cache/data/e7" />
