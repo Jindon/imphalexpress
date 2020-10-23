@@ -2,9 +2,9 @@
     <div class="flex flex-col md:flex-row justify-between items-center">
         <div class="w-full md:w-1/3 flex items-center justify-between px-4 md:px-6 py-2 md:py-0 border-b border-gray-300 md:border-none">
             <h1 class="text-lg leading-tight">Imphal <span class="font-black text-orange-600">Express</span></h1>
-            <a href="/" class="md:hidden flex items-center text-gray-600 leading-none font-bold transition duration-200 hover:text-orange-600">
+            <a href="tel:{{ siteContactNumber() }}" class="md:hidden flex items-center text-gray-600 leading-none font-bold transition duration-200 hover:text-orange-600">
                 <x-icon type="phone" />
-                <div class="ml-2">8541230698</div>
+                <div class="ml-2">{{ siteContactNumber() }}</div>
             </a>
         </div>
         <div class="w-full md:w-1/3 overflow-hidden overflow-x-auto px-4 md:px-6 md:px-0 py-2 md:py-0">
@@ -25,7 +25,7 @@
             </div>
         </div>
         <div class="w-1/3 hidden md:block px-4 md:px-6">
-            <a href="tel:+918794205728" class="flex items-center justify-end text-gray-600 leading-none font-bold transition duration-200 hover:text-orange-600">
+            <a href="tel:{{ siteContactNumber() }}" class="flex items-center justify-end text-gray-600 leading-none font-bold transition duration-200 hover:text-orange-600">
                 <x-icon type="phone" />
                 <div class="ml-2">{{ siteContactNumber() }}</div>
             </a>

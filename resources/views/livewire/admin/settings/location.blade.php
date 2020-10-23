@@ -7,7 +7,13 @@
                 <span>{{ $location->name }}</span>
                 <div class="flex items-center space-x-1">
                     <x-button.icon.edit icon-width="3" class="p-2" wire:click="openEdit({{ $location->id }})"></x-button.icon.edit>
-                    <x-button.icon.close icon-width="3" class="p-2" wire:click="confirmDelete({{ $location->id }})"></x-button.icon.close>
+                    <x-button.icon.close
+                        icon-width="3"
+                        class="p-2"
+                        wire:click="confirmDelete({{ $location->id }})"
+                        :disabled="$location->can_be_deleted"
+                    >
+                    </x-button.icon.close>
                 </div>
             </div>
         </div>

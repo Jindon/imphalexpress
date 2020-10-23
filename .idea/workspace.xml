@@ -2,9 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dd1ec14b-fd79-4e3c-b062-204d4a645b9d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/imphalexpress.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/imphalexpress.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Business.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Business.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Location.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Location.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/components/button/icon/close.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/button/icon/close.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/components/button/icon/delete.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/button/icon/delete.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/components/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/livewire/admin/settings/business.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/admin/settings/business.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/livewire/admin/settings/location.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/admin/settings/location.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -226,7 +234,7 @@
       <workItem from="1603174807987" duration="4555000" />
       <workItem from="1603293019936" duration="9324000" />
       <workItem from="1603345750652" duration="42838000" />
-      <workItem from="1603430418353" duration="3130000" />
+      <workItem from="1603430418353" duration="4813000" />
     </task>
     <servers />
   </component>
@@ -298,9 +306,9 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="425" y="189" key="run.anything.popup/0.0.1536.834@0.0.1536.834" timestamp="1603387177260" />
-    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1603432881778">
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1603435013253">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1603432881778" />
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1603435013253" />
   </component>
 </project>

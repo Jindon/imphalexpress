@@ -23,3 +23,5 @@ Homestead.json
 .phpunit.result.cache
 
 /.idea
+.idea/workspace.xml
+.idea/inspectionProfiles/Project_Default.xml

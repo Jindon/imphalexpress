@@ -133,7 +133,11 @@
                                         </div>
                                     </x-button.action>
                                     <x-button.icon.edit wire:click="editBusiness({{ $business->id }})" class="text-gray-600"/>
-                                    <x-button.icon.delete wire:click="confirmDelete({{ $business->id }})" class="text-gray-600"/>
+                                    <x-button.icon.delete
+                                        wire:click="confirmDelete({{ $business->id }})"
+                                        class="text-gray-600 p-2"
+                                        :disabled="$business->can_be_deleted"
+                                    ></x-button.icon.delete>
                                 </x-button.group>
                             </x-table.cell>
                         </x-table.row>

@@ -16,6 +16,11 @@ class Business extends Model
         return $this->belongsTo(Location::class);
     }
 
+    public function packages()
+    {
+        return $this->hasMany(Package::class);
+    }
+
     public function getCreatedAtFormattedAttribute()
     {
         return $this->created_at->format('d/m/Y');
@@ -24,5 +29,10 @@ class Business extends Model
     public function getStatus()
     {
         return $this->status ? 'Active' : 'Inactive';
+    }
+
+    public function getCanBeDeletedAttribute()
+    {
+        return $this->packages->count() > 0;
     }
 }
