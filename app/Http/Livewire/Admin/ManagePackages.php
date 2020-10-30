@@ -7,6 +7,7 @@ use App\Http\Livewire\DataTable\WithCachedRows;
 use App\Http\Livewire\DataTable\WithPerPagePagination;
 use App\Http\Livewire\DataTable\WithSorting;
 use App\Models\Business;
+use App\Models\DeliveryPricing;
 use App\Models\Location;
 use App\Models\Package;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
@@ -31,6 +32,8 @@ class ManagePackages extends Component
     public $delivery_address;
     public $delivery_contact;
     public $delivery_note;
+    public $cod = false;
+    public $cod_amount;
     public $collected_on;
     public $deliver_by;
     public $status = 'processing';
@@ -52,6 +55,7 @@ class ManagePackages extends Component
         'deliverByMaxDate' => null,
         'businessLocation' => null,
         'deliveryLocation' => null,
+        'cod' => null,
     ];
 
     protected $listeners = ['refreshPackages' => '$refresh'];
@@ -64,6 +68,8 @@ class ManagePackages extends Component
         'delivery_contact' => 'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10|max:15',
         'delivery_note' => 'sometimes|max:125',
         'collected_on' => 'required',
+        'cod' => 'sometimes|boolean',
+        'cod_amount' => $this->cod ? 'required|numeric' : 'nullable',
         'deliver_by' => 'required',
         'status' => 'required',
         'delivered_on' => 'sometimes',
@@ -201,6 +207,12 @@ class ManagePackages extends Component
         $data = $this->validate();
         $saveData = $this->convertDateStringToTimestamp($data);
 
+        $businessLocationId = Business::findOrFail($this->business_id)->location_id;
+        $delivery_price = $this->getDeliveryCharge($this->location_id, $businessLocationId);
+
+        $saveData['delivery_price'] = $delivery_price;
+        $saveData['cod_amount'] = $saveData['cod_amount'] ? (int) $saveData['cod_amount'] * 100 : null;
+
         try {
             $this->editPackage
                 ? $this->editPackage->update($saveData)
@@ -211,6 +223,16 @@ class ManagePackages extends Component
         } catch (\Exception $error) {
             dd($error);
         }
+    }
+
+    protected function getDeliveryCharge($to_location_id, $from_location_id)
+    {
+        $query = DeliveryPricing::whereIn('from_id', [$to_location_id, $from_location_id])
+                            ->whereIn('to_id', [$to_location_id, $from_location_id]);
+        $price = $query->exists() ? $query->first()->price : 5000;
+
+        return $price;
+
     }
 
     public function convertDateStringToTimestamp($data)
@@ -232,6 +254,8 @@ class ManagePackages extends Component
         $this->delivery_address = $this->editPackage->delivery_address;
         $this->delivery_contact = $this->editPackage->delivery_contact;
         $this->delivery_note = $this->editPackage->delivery_note;
+        $this->cod = $this->editPackage->cod;
+        $this->cod_amount = $this->editPackage->cod_amount ?? 0;
         $this->collected_on = Carbon::parse($this->editPackage->collected_on)->format('d/m/Y');
         $this->deliver_by = Carbon::parse($this->editPackage->deliver_by)->format('d/m/Y');
         $this->status = $this->editPackage->status;
@@ -261,6 +285,9 @@ class ManagePackages extends Component
                 });
             })
             ->when($this->filters['deliveryLocation'], fn($query, $deliveryLocation) => $query->where('location_id', $deliveryLocation))
+            ->when(in_array($this->filters['cod'], ['0','1']), function($query) {
+                $query->where('cod', $this->filters['cod']);
+            })
             ->when($this->filters['search'], fn($query, $search) => $query->where('tracking_id', 'like', '%'.$search.'%'));
         return $this->applySorting($query);
     }

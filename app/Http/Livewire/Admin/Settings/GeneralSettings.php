@@ -42,7 +42,7 @@ class GeneralSettings extends Component
         Settings::whereIdentifier('contact-number')->update(['value' => $this->contactNumber]);
         Settings::whereIdentifier('callback-email')->update(['value' => $this->callbackEmail]);
 
-        $this->notify('BusinessSettings saved successfully!');
+        $this->notify('Settings saved successfully!');
     }
 
     public function render()
