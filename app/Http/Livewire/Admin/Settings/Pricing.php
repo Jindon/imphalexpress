@@ -78,6 +78,7 @@ class Pricing extends Component
                                     $query->whereIn('from_id', [$this->from_id, $this->to_id])
                                         ->orWhereIn('to_id', [$this->from_id, $this->to_id]);
                                 })->get(),
-        ]);
+        ])
+        ->layout('layouts.settings');
     }
 }
