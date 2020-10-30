@@ -28,6 +28,20 @@ class Package extends Model
     ];
 
     protected $guarded = [];
+    protected $appends = ['delivery_charge'];
+
+    public function getDeliveryChargeAttribute()
+    {
+        return (double) $this->delivery_price / 100;
+    }
+    public function getCodAmountAttribute($value)
+    {
+        return (double) $value / 100;
+    }
+
+    public function isCOD(){
+        return $this->cod ? 'Yes' : 'No';
+    }
 
     public function business()
     {
