@@ -55,11 +55,19 @@ class Package extends Model
 
     public function formatDate($date)
     {
-        return Carbon::make($date)->format('d/m/Y');
+        if($date) {
+            return Carbon::make($date)->format('d/m/Y');
+        }
+
+        return null;
     }
 
     public function humanDate($date)
     {
-        return Carbon::make($date)->toFormattedDateString();
+        if($date) {
+            return Carbon::make($date)->toFormattedDateString();
+        }
+
+        return null;
     }
 }
